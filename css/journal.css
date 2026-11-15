@@ -690,4 +690,4 @@ html.theme-dark .w-tag.w-highlight { background: rgba(245, 196, 81, .16) !import
 /* finance tile: flat, site palette (teal to deep teal), white candlesticks */
 .is-icon.is-finance { background: linear-gradient(135deg, #1CC8C4 0%, #11ABB0 55%, #0B7F83 100%); box-shadow: 0 6px 16px rgba(17, 171, 176, .3); }
 header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg, rgba(28, 200, 196, .85) 0%, rgba(17, 171, 176, .85) 55%, rgba(11, 127, 131, .85) 100%); }
-.is-icon.is-finance svg { width: 72%; height: 72%; filter: none; }
+.is-icon.is-finance svg { width: 76%; height: 76%; filter: none; }
