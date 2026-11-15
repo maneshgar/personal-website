@@ -341,7 +341,7 @@ header .hero-latest-wrap {
    position: absolute;
    left: 0;
    right: 0;
-   bottom: calc(130px + var(--hero-fade, 0px));
+   bottom: calc(170px + var(--hero-fade, 0px));
    z-index: 2;
 }
 header .hero-latest-label {
@@ -516,7 +516,7 @@ header .hero-card-text {
 }
 
 @media only screen and (max-width: 767px) {
-   header .hero-latest-wrap { bottom: calc(64px + var(--hero-fade, 0px)); }
+   header .hero-latest-wrap { bottom: calc(104px + var(--hero-fade, 0px)); }
    header .hero-card { width: 300px; height: 124px; padding: 14px 16px; border-radius: 20px; }
    header .hero-card-title { font-size: 15px; line-height: 21px; }
    header .hero-card-text { -webkit-line-clamp: 1; }

@@ -1313,12 +1313,12 @@ header:after {
 }
 header .scrolldown a { z-index: 3; bottom: calc(30px + var(--hero-fade)); }
 header#home .banner { padding-bottom: calc(30px + var(--hero-fade)); }
-header#home.has-latest .banner { padding-bottom: calc(300px + var(--hero-fade)); }
+header#home.has-latest .banner { padding-bottom: calc(340px + var(--hero-fade)); }
 #about { padding-top: 64px; }
 @media only screen and (max-width: 767px) {
    header#home { --hero-fade: 180px; }
    header#home .banner { padding-bottom: calc(12px + var(--hero-fade)); }
-   header#home.has-latest .banner { padding-bottom: calc(260px + var(--hero-fade)); }
+   header#home.has-latest .banner { padding-bottom: calc(300px + var(--hero-fade)); }
 }
 @media only screen and (max-height: 640px) {
    header#home.has-latest .banner { padding-bottom: calc(30px + var(--hero-fade)); }
