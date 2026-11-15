@@ -1,0 +1,71 @@
+---
+layout: writing
+---
+{% assign words = content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: 200 | plus: 1 %}
+<article class="w-post">
+
+	<a class="w-crumb" href="/writing/">&larr; Writing</a>
+
+	<div class="w-post-head">
+		<p class="w-meta">
+			{% for t in page.tags %}<a class="w-tag" href="/writing/#{{ t }}">{{ site.writing_tags[t] | default: t }}</a>{% endfor %}
+			<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+			<span class="w-dot" aria-hidden="true">&middot;</span>
+			<span>{{ minutes }} min read</span>
+		</p>
+		<h1>{{ page.title }}</h1>
+		{% if page.description %}<p class="w-dek">{{ page.description }}</p>{% endif %}
+	</div>
+
+	{% if page.book_title or page.book_author %}
+	<aside class="w-book">
+		{% if page.cover %}<img src="{{ page.cover }}" alt="Cover of {{ page.book_title | default: page.title }}" loading="lazy">{% endif %}
+		<div>
+			<p class="w-book-label">The book</p>
+			<p class="w-book-title">{{ page.book_title | default: page.title }}</p>
+			{% if page.book_author %}<p class="w-book-author">by {{ page.book_author }}</p>{% endif %}
+			{% if page.rating %}
+			<p class="w-rating" aria-label="Rated {{ page.rating }} out of 5">
+				{% for i in (1..5) %}<i class="fa {% if i <= page.rating %}fa-star{% else %}fa-star-o{% endif %}"></i>{% endfor %}
+			</p>
+			{% endif %}
+		</div>
+	</aside>
+	{% endif %}
+
+	<div class="w-body">
+		{{ content }}
+	</div>
+
+	{% if page.link %}
+	{% assign host = page.link | split: '//' | last | split: '/' | first | remove: 'www.' %}
+	<a class="w-linkcard" href="{{ page.link }}" target="_blank" rel="noopener">
+		{% if page.link_icon %}<img class="w-linkcard-img" src="{{ page.link_icon }}" alt="">{% else %}<span class="w-linkcard-icon" aria-hidden="true"><i class="fa fa-external-link"></i></span>{% endif %}
+		<span class="w-linkcard-text">
+			<span class="w-linkcard-source">{{ page.link_source | default: host }}</span>
+			<span class="w-linkcard-title">{{ page.link_title | default: page.title }}</span>
+			<span class="w-linkcard-host">{{ host }}</span>
+		</span>
+		<span class="w-linkcard-cta">{{ page.link_label | default: 'Read' }} &rarr;</span>
+	</a>
+	{% endif %}
+
+	{% if page.previous or page.next %}
+	<nav class="w-post-nav" aria-label="More writing">
+		{% if page.previous %}
+		<a class="w-nav-card" href="{{ page.previous.url }}">
+			<span class="w-nav-label">&larr; Older</span>
+			<span class="w-nav-title">{{ page.previous.title }}</span>
+		</a>
+		{% else %}<span></span>{% endif %}
+		{% if page.next %}
+		<a class="w-nav-card is-next" href="{{ page.next.url }}">
+			<span class="w-nav-label">Newer &rarr;</span>
+			<span class="w-nav-title">{{ page.next.title }}</span>
+		</a>
+		{% endif %}
+	</nav>
+	{% endif %}
+
+</article>

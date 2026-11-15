@@ -1,8 +1,6 @@
 /*
 =====================================================================
-*   Ceevee v1.0 Default Stylesheet
-*   url: styleshout.com
-*   03-17-2014
+*   maneshgar.com: Default Stylesheet
 =====================================================================
 
 TOC:
@@ -26,9 +24,9 @@ e. Others
 /* a. Webfonts and Icon fonts
  ------------------------------------------------------------------ */
 
-@import url("fonts.css");
-@import url("fontello/css/fontello.css");
-@import url("font-awesome/css/font-awesome.min.css");
+/* @import url("fonts.css") -- now a <link> in index.html */
+/* @import url("fontello/css/fontello.css") -- now a <link> in index.html */
+/* @import url("font-awesome/css/font-awesome.min.css") -- now a <link> in index.html */
 
 /* ------------------------------------------------------------------
 /* b. Reset

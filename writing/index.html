@@ -1,0 +1,71 @@
+---
+layout: writing
+title: Writing
+description: News, books I've read, finance, and notes on what I've learned, by Behnam Maneshgar.
+---
+<section class="w-list">
+
+	<div class="w-list-head">
+		<h1>Writing</h1>
+		<p class="w-intro">News, books I&rsquo;ve read, finance, and notes on what I&rsquo;ve learned and found interesting.</p>
+
+		<div class="w-filters" role="group" aria-label="Filter by topic">
+			<button type="button" class="w-filter is-active" data-tag="all">All</button>
+			{% for t in site.writing_tags %}<button type="button" class="w-filter" data-tag="{{ t[0] }}">{{ t[1] }}</button>{% endfor %}
+		</div>
+	</div>
+
+	{% if site.posts.size > 0 %}
+	<ul class="w-posts">
+		{% for post in site.posts %}
+		<li class="w-card" data-tags="{{ post.tags | join: ' ' }}">
+			<a href="{{ post.url }}">
+				{% assign thumb = post.cover | default: post.image %}
+				{% if thumb %}<img class="w-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif post.tags contains 'news' %}<span class="w-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% endif %}
+				<div class="w-card-text">
+					<p class="w-meta">
+						<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+						{% for t in post.tags %}<span class="w-tag">{{ site.writing_tags[t] | default: t }}</span>{% endfor %}
+					</p>
+					<h2>{{ post.title }}</h2>
+					<p class="w-excerpt">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 180 }}</p>
+				</div>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<p class="w-empty" hidden>Nothing here yet.</p>
+	{% else %}
+	<p class="w-empty">First posts coming soon.</p>
+	{% endif %}
+
+</section>
+
+<script>
+(function () {
+	var buttons = document.querySelectorAll('.w-filter');
+	var cards = document.querySelectorAll('.w-card');
+	var empty = document.querySelector('.w-posts + .w-empty');
+
+	function show(tag) {
+		var visible = 0;
+		buttons.forEach(function (b) { b.classList.toggle('is-active', b.dataset.tag === tag); });
+		cards.forEach(function (c) {
+			var match = tag === 'all' || (' ' + c.dataset.tags + ' ').indexOf(' ' + tag + ' ') > -1;
+			c.hidden = !match;
+			if (match) visible++;
+		});
+		if (empty) empty.hidden = visible > 0;
+	}
+
+	buttons.forEach(function (b) {
+		b.addEventListener('click', function () {
+			show(b.dataset.tag);
+			history.replaceState(null, '', b.dataset.tag === 'all' ? location.pathname : '#' + b.dataset.tag);
+		});
+	});
+
+	var start = location.hash.slice(1);
+	if (start && document.querySelector('.w-filter[data-tag="' + start + '"]')) show(start);
+})();
+</script>

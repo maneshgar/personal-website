@@ -1,3 +1,6 @@
+---
+# Processed by Jekyll so the home page can list the latest writing.
+---
 <!DOCTYPE html>
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
@@ -8,48 +11,87 @@
  ================================================== -->
 <meta charset="utf-8">
 	<title>Behnam Maneshgar</title>
-	<meta name="description" content="Homepage">
-		<meta name="author" content="Behnam Maneshgar">
+	<meta name="description" content="Behnam Maneshgar: PhD student in Bioinformatics at the University of British Columbia, working on machine learning, computer vision and computational biology.">
+	<meta name="author" content="Behnam Maneshgar">
+	<link rel="canonical" href="https://maneshgar.com/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Behnam Maneshgar">
+	<meta property="og:description" content="PhD student in Bioinformatics at UBC, working on machine learning, computer vision and computational biology.">
+	<meta property="og:url" content="https://maneshgar.com/">
+	<meta property="og:image" content="https://maneshgar.com/images/profilepic.png">
 			
-			<!-- Mobile Specific Metas
+	<!-- Mobile Specific Metas
 			 ================================================== -->
-			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 				
-				<!-- CSS
+	<!-- CSS
 				 ================================================== -->
-				<link rel="stylesheet" href="css/default.css">
-					<link rel="stylesheet" href="css/layout.css">
-						<link rel="stylesheet" href="css/media-queries.css">
-							<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="preload" href="css/fonts/opensans/OpenSans-Regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="css/fonts/opensans/OpenSans-Bold-webfont.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/fontello/css/fontello.css">
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/media-queries.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/writing.css">
+	{% feed_meta %}
 								
-								<!-- Script
+	<!-- Script
 								 ================================================== -->
-								<script src="js/modernizr.js"></script>
+	<script src="js/modernizr.js"></script>
 								
-								<!-- Favicons
+	<!-- Favicons
 								 ================================================== -->
-								<link rel="shortcut icon" href="favicon.png" >
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 									
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "Person",
+	  "name": "Behnam Maneshgar",
+	  "url": "https://maneshgar.com/",
+	  "image": "https://maneshgar.com/images/profilepic.png",
+	  "email": "mailto:behnam@maneshgar.com",
+	  "jobTitle": "PhD Researcher",
+	  "affiliation": { "@type": "CollegeOrUniversity", "name": "University of British Columbia" },
+	  "alumniOf": [
+	    { "@type": "CollegeOrUniversity", "name": "Concordia University" },
+	    { "@type": "CollegeOrUniversity", "name": "University of Isfahan" }
+	  ],
+	  "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA" },
+	  "knowsAbout": ["Machine Learning", "Computer Vision", "Bioinformatics", "Computational Pathology"],
+	  "sameAs": [
+	    "https://scholar.google.ca/citations?user=URTtFywAAAAJ",
+	    "https://ca.linkedin.com/in/bmaneshgar"
+	  ]
+	}
+	</script>
 </head>
 
 <body>
 
 <!-- Header
  ================================================== -->
-<header id="home">
+<header id="home"{% if site.posts.size > 0 %} class="has-latest"{% endif %}>
 	
 	<nav id="nav-wrap">
 		
 		<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
 		<a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 		
+		<div class="nav-brand-wrap"><a class="nav-brand smoothscroll" href="#home">Behnam Maneshgar</a></div>
+
 		<ul id="nav" class="nav">
 			<li class="current"><a class="smoothscroll" href="#home">Home</a></li>
 			<li><a class="smoothscroll" href="#about">Bio</a></li>
 			<li><a class="smoothscroll" href="#resume">Resume</a></li>
-			<li><a class="smoothscroll" href="#portfolio">Related Links</a></li>
-			<li><a class="smoothscroll" href="#testimonials">Notes</a></li>
 			<li><a class="smoothscroll" href="#contact">Contact</a></li>
+			<li class="nav-page"><a href="/writing/">Writing</a></li>
 		</ul> <!-- end #nav -->
 		
 	</nav> <!-- end #nav-wrap -->
@@ -57,16 +99,38 @@
 	<div class="row banner">
 		<div class="banner-text">
 			<h1 class="responsive-headline">Welcome</h1>
-			<h3>to Behnam Maneshgar's personal Webpage. <br><br>Let's <a class="smoothscroll" href="#about">scroll</a>
+			<h3>to Behnam Maneshgar's personal Webpage.<br>Let's <a class="smoothscroll" href="#about">scroll</a>
 				and learn more about me.</h3>
 			<hr />
 			<ul class="social">
-				<li><a href="https://www.facebook.com/maneshgar.behnam/"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="https://ca.linkedin.com/in/bmaneshgar"><i class="fa fa-linkedin"></i></a></li>
-				<li><a href="https://www.instagram.com/behnam_maneshgar/"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="https://ca.linkedin.com/in/bmaneshgar" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="https://www.instagram.com/behnam_maneshgar/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
 			</ul>
 		</div>
 	</div>
+	
+	{% if site.posts.size > 0 %}
+	<div class="hero-latest-wrap">
+	<p class="hero-latest-label"><span>Latest writing</span><a href="/writing/">See all &rarr;</a></p>
+	<div class="hero-latest" aria-label="Latest writing">
+		<div class="hero-track">
+			{% for post in site.posts limit: 20 %}
+			{% assign thumb = post.cover | default: post.image %}
+			{% assign is_news = false %}{% if post.tags contains 'news' %}{% assign is_news = true %}{% endif %}
+			<a class="hero-card{% if thumb or is_news %} has-cover{% endif %}" href="{{ post.url }}">
+				{% if thumb %}<img class="hero-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif is_news %}<span class="hero-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% endif %}
+				<span class="hero-card-body">
+					<span class="hero-card-meta">{{ post.date | date: '%b %-d, %Y' }}{% for t in post.tags limit: 1 %} &middot; {{ site.writing_tags[t] | default: t }}{% endfor %}</span>
+					<span class="hero-card-title">{{ post.title }}</span>
+					{% if post.book_author %}<span class="hero-card-book">{{ post.book_title | default: post.title }} &mdash; {{ post.book_author }}{% if post.rating %} <span class="hero-card-stars" aria-label="{{ post.rating }} out of 5">{% for i in (1..5) %}{% if i <= post.rating %}&#9733;{% else %}&#9734;{% endif %}{% endfor %}</span>{% endif %}</span>{% endif %}
+					<span class="hero-card-text">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 160 }}</span>
+				</span>
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+	</div>
+	{% endif %}
 	
 	<p class="scrolldown">
 	<a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
@@ -78,37 +142,39 @@
 <!-- Bio Section
  ================================================== -->
 <section id="about">
-	
+
+	<div class="row">
+		<div class="twelve columns">
+			<h1 class="section-title"><span>Bio</span></h1>
+		</div>
+	</div>
+
 	<div class="row">
 		
 		<div class="three columns">
 			
-			<img class="profile-pic"  src="images/profilepic.png" alt="" />
+			<img class="profile-pic" src="images/profilepic.webp" width="120" height="120" alt="Behnam Maneshgar" />
 			
 		</div>
 		
 		<div class="nine columns main-col">
 			
-			<h2>Bio</h2>
-				<p style="text-align:justify">
-				  I am a researcher specializing in machine learning and computer vision. My journey into computer science began in 2010 when I enrolled in the Software Engineering program at Isfahan University, Iran. After graduating in 2014, I moved to Canada to pursue a Master’s in Computer Science at Concordia University. During my time there, I had the privilege of working under the supervision of Dr. Sudhir P. Mudur and Dr. Charalambos Poullis in the <a href="http://theictlab.org/">Immersive and Creative Technologies (ICT) Lab</a>, where I deepened my expertise in computer vision.
-				
-				  After completing my degree, I transitioned into industry and spent four rewarding years as a software designer at <a href="http://matrox.com/">Matrox Electronic Systems</a>, gaining hands-on experience across various areas of software development. In 2021, driven by a continued passion for innovation, I relocated to Vancouver to join <a href="http://www.huawei.com/en/">Huawei Technologies</a>, where I worked on cutting-edge challenges in autonomous driving, focusing on the three pillars of Perception, Prediction, and Planning.
-				
-				  In 2024, I made the decision to return to academia and pursue my PhD. I am currently a PhD student in Bioinformatics at the University of British Columbia under the supervision of Dr. Ali Bashashati. My research focuses on computational biology and genomics. For more details, please visit the <a href="https://www.aimlab.ca">AIMLab website</a>.
-				
-				  My journey is ongoing—stay tuned for more updates!
-				</p>			
+				<div class="bio-text">
+				<p>I am a researcher specializing in machine learning and computer vision. My journey into computer science began in 2010 when I enrolled in the Software Engineering program at Isfahan University, Iran. After graduating in 2014, I moved to Canada to pursue a Master’s in Computer Science at Concordia University. During my time there, I had the privilege of working under the supervision of Dr. Sudhir P. Mudur and Dr. Charalambos Poullis in the <a href="http://theictlab.org/">Immersive and Creative Technologies (ICT) Lab</a>, where I deepened my expertise in computer vision.</p>
+				<p>After completing my degree, I transitioned into industry and spent four rewarding years as a software designer at <a href="http://matrox.com/">Matrox Electronic Systems</a>, gaining hands-on experience across various areas of software development. In 2021, driven by a continued passion for innovation, I relocated to Vancouver to join <a href="http://www.huawei.com/en/">Huawei Technologies</a>, where I worked on cutting-edge challenges in autonomous driving, focusing on the three pillars of Perception, Prediction, and Planning.</p>
+				<p>In 2024, I made the decision to return to academia and pursue my PhD. I am currently a PhD student in Bioinformatics at the University of British Columbia under the supervision of Dr. Ali Bashashati. My research focuses on computational biology and genomics. For more details, please visit the <a href="https://www.aimlab.ca">AIMLab website</a>.</p>
+				<p>My journey is ongoing—stay tuned for more updates!</p>
+			</div>			
 			<div class="row">
 				
 				<div class="columns contact-details">
 					
-					<h2>Contact Details</h2>
+					<h2 class="cv-subhead">Contact Details</h2>
 					<p class="address">
                     
                     <span>Behnam Maneshgar</span><br>
 					<span>Vancouver, BC, Canada<br></span>
-					<span>behnam@maneshgar.com</span>
+					<span><a href="mailto:behnam@maneshgar.com">behnam@maneshgar.com</a></span>
 					</p>
 					
 				</div>
@@ -129,73 +195,58 @@
 </section> <!-- About Section End-->
 
 
+
+
+
 <!-- Resume Section
  ================================================== -->
 <section id="resume">
+
+	<div class="row">
+		<div class="twelve columns">
+			<h1 class="section-title"><span>Resume</span></h1>
+		</div>
+	</div>
 	
 	<!-- Education
 	 ----------------------------------------------- -->
 	<div class="row education">
-		
+
 		<div class="three columns header-col">
 			<h1><span>Education</span></h1>
 		</div>
-		
+
 		<div class="nine columns main-col">
 
-			
-			<div class="row item">
-				
-				<div class="twelve columns">
-					
+			<div class="cv-entry">
+				<div class="cv-entry-head">
 					<h3>University of British Columbia</h3>
-					<p class="info">PhD in Bioinformatics<span>&bull;</span> <em class="date">2024 - 2029</em></p>
-					
-					<p>
-					<br>
-					</p>
-					
-					
+					<span class="cv-date">2024 &ndash; 2029</span>
 				</div>
-				
-			</div> <!-- item end -->
-			
-			<div class="row item">
-				
-				<div class="twelve columns">
-					
+				<p class="info">PhD in Bioinformatics</p>
+			</div>
+
+			<div class="cv-entry">
+				<div class="cv-entry-head">
 					<h3>Concordia University</h3>
-					<p class="info">Masters in Computer Science <span>&bull;</span> <em class="date">2015 - 2017</em></p>
-					
-					<p>
-					<br>
-					</p>
-					
-					
+					<span class="cv-date">2015 &ndash; 2017</span>
 				</div>
-				
-			</div> <!-- item end -->
-			
-			<div class="row item">
-				
-				<div class="twelve columns">
-					
+				<p class="info">Master&rsquo;s in Computer Science</p>
+			</div>
+
+			<div class="cv-entry">
+				<div class="cv-entry-head">
 					<h3>University of Isfahan</h3>
-					<p class="info">B.Eng. in Software Engineering <span>&bull;</span> <em class="date">2010 - 2014</em></p>
-					
-					<p>
-					<br>
-					</p>
-					
+					<span class="cv-date">2010 &ndash; 2014</span>
 				</div>
-				
-			</div> <!-- item end -->
-			
-		</div> <!-- main-col end -->
-		
-	</div> <!-- End Education -->
-	
-	
+				<p class="info">B.Eng. in Software Engineering</p>
+			</div>
+
+		</div>
+
+	</div>
+
+
 	<!-- Projects
 	 ----------------------------------------------- -->
 	<!-- <div class="row work">
@@ -262,189 +313,255 @@
 	</div>
 	 -->
 	
-	<!-- EXPERIENCES
+	<!-- Experience
 	 ----------------------------------------------- -->
 	<div class="row work">
-		
+
 		<div class="three columns header-col">
-			<h1><span>EXPERIENCES</span></h1>
+			<h1><span>Experience</span></h1>
 		</div>
-		
+
 		<div class="nine columns main-col">
-			
-			<div class="row item">
-				
-				<div class="twelve columns">
-					
+
+			<div class="cv-entry">
+				<div class="cv-entry-head">
+					<h3>PhD Researcher</h3>
+					<span class="cv-date">2024 &ndash; Present</span>
+				</div>
+				<p class="info">University of British Columbia &middot; AIMLab</p>
+				<p class="desc">Research in bioinformatics under the supervision of Dr. Ali Bashashati.</p>
+			</div>
+
+			<div class="cv-entry">
+				<div class="cv-entry-head">
 					<h3>AI Research Engineer</h3>
-                    <p class="info">Huawei Technologies Canada <em class="date">(2021 - Present)</em></p>
-                    
-					<p>Applied research in perception and planning algorithms in autonomous vehicles.</p>
-	
+					<span class="cv-date">2021 &ndash; 2024</span>
 				</div>
-				
-			</div> <!-- item end -->
-			
-			<div class="row item">
-				
-				<div class="twelve columns">
-					
+				<p class="info">Huawei Technologies Canada</p>
+				<p class="desc">Applied research in perception and planning algorithms for autonomous vehicles.</p>
+			</div>
+
+			<div class="cv-entry">
+				<div class="cv-entry-head">
 					<h3>Software Designer</h3>
-                    <p class="info">Matrox Electronic Systems <em class="date">(2017 - 2021)</em></p>
-					<p>Research and development of deep learning solutions for machine vision industry.</p>
-	
+					<span class="cv-date">2017 &ndash; 2021</span>
 				</div>
-				
-			</div> <!-- item end -->
-			
-			<div class="row item">
-				
-				<div class="twelve columns">
-					
+				<p class="info">Matrox Electronic Systems</p>
+				<p class="desc">Research and development of deep learning solutions for the machine vision industry.</p>
+			</div>
+
+			<div class="cv-entry">
+				<div class="cv-entry-head">
 					<h3>Research Assistant</h3>
-                    <p class="info">Concordia University <em class="date">(2016 - 2017)</em></p>
-					<p>Masters thesis at the Immersive and Creative Technologies (ICT) Lab</p>
-                    <p class="info">Isfahan University <em class="date">(2007 - 2010)</em></p>
-					<p>Bachelor intership at Software Security Lab </p>
-					
+					<span class="cv-date">2016 &ndash; 2017</span>
 				</div>
-				
-			</div> <!-- item end -->
-			
-			<div class="row item">
-				
-				<div class="twelve columns">
-					
+				<p class="info">Concordia University &middot; ICT Lab</p>
+				<p class="desc">Master&rsquo;s thesis at the Immersive and Creative Technologies (ICT) Lab.</p>
+			</div>
+
+			<div class="cv-entry">
+				<div class="cv-entry-head">
 					<h3>Teaching Assistant</h3>
-					
-					<p class="info">Concordia University</p>
-					
-                    <p>
-                    &emsp; &bull; Computer Graphics: Full TA | <em class="date">2016 - 2017 (4 semesters)</em>.<br>
-             
-                    &emsp; &bull; Computer Graphics: Marker | <em class="date">2016 - 2017 (5 semesters)</em>.<br>
-             
-    &emsp; &bull; Computer Vision: Marker | <em class="date">Winter 2017</em>.<br>
-             
-                    </p>
+					<span class="cv-date">2016 &ndash; 2017</span>
 				</div>
-				
-			</div> <!-- item end -->
-			
-		</div> <!-- main-col end -->
-		
-	</div> <!-- End Projects -->
-    
-    
-    <!-- Honors, Awards & Recognition
-     ------------------------------------------------->
-    <div class="row work">
-        
-        <div class="three columns header-col">
-            <h1><span>PUBLICATION </span></h1>
-        </div>
-        
-        <div class="nine columns main-col">
-            
-            
-            
-            <div class="row item">
-                
-                <div class="twelve columns">
-                    
-                    <p class="info">
+				<p class="info">Concordia University</p>
+				<ul class="cv-list">
+					<li>Computer Graphics &mdash; Full TA <span>4 semesters</span></li>
+					<li>Computer Graphics &mdash; Marker <span>5 semesters</span></li>
+					<li>Computer Vision &mdash; Marker <span>Winter 2017</span></li>
+				</ul>
+			</div>
 
-						Ahmadvand Po, <b>Maneshgar B</b>, Ahmadvand Pa, “Evaluating Deep Learning Feature Towards Ranking of Immunocytochemistry Images”,  4th International Conference on Pattern Recognition and Image Analysis (IPRIA), 2019. 
-						<br><br>
-						<b>Maneshgar B</b>, Sujir L, Mudur S.P., Poullis C,“Automatic adjustment of stereoscopic content for long-range projection in outdoor areas”, 25th ACM Multimedia conference, 2017. 
-						<br><br>
-						<b>Maneshgar B</b>, Sujir L, Mudur S.P., Poullis C,“A Long-Range Vision System for Projection Mapping of Stereoscopic Content in Outdoor Areas”, 12th International Conference on Computer Graphics Theory and Applications GRAPP, 2017.
+			<div class="cv-entry">
+				<div class="cv-entry-head">
+					<h3>Research Intern</h3>
+					<span class="cv-date">2007 &ndash; 2010</span>
+				</div>
+				<p class="info">University of Isfahan &middot; Software Security Lab</p>
+				<p class="desc">Bachelor internship at the Software Security Lab.</p>
+			</div>
 
-                    </p>
+		</div>
 
-                    
-                </div>
-                
-            </div> <!-- item end -->
-            
-        </div> <!-- main-col end -->
-        
-    </div> <!-- End Projects -->
-    
-    
- 
- 
-	<!-- Honors, Awards & Recognition
-     ------------------------------------------------->
-    <div class="row work">
-        
-        <div class="three columns header-col">
-            <h1><span>Honors &amp; Awards </span></h1>
-        </div>
-        
-        <div class="nine columns main-col">
-            
-            
-            
-            <div class="row item">
-                
-                <div class="twelve columns">
-                    
-                    <h3>Awards</h3>
+	</div>
 
-		    <p class="info">CIHR Doctoral Research Award - Canada Graduate Scholarship! | May 2025</p>
-			
-		    <p class="info">UBC Four Year Fellowship (4YF) Award | September 2024</p>
-			
-                    <p class="info">Concordia University Graduate Studies/Fellowship Award | Winter 2016 - 2017</p>
-                    
-                    <p class="info">Concordia University Conference And Exposition Award | January 2017</p>
-                    
-                </div>
-                
-            </div> <!-- item end -->
-            
-            
-            <div class="row item">
-                
-                <div class="twelve columns">
-                    
-                    <h3>Hounors</h3>
-                    
-                    <p class="info">Golden Key International Honour Society | August 2016 </p>
-                    <p class="info">Honorables mention for participating in ACM-ICPC Regional Contest | 2011 </p>
-                    
-                </div>
-                
-            </div> <!-- item end -->
-            
-            
-        </div> <!-- main-col end -->
-        
-    </div> <!-- End Projects -->
-    
-    
-</section> <!-- Resume Section End-->
+	<!-- Honors & Awards
+	 ----------------------------------------------- -->
+	<div class="row work">
 
+		<div class="three columns header-col">
+			<h1><span>Honors &amp; Awards</span></h1>
+		</div>
 
-<!-- Portfolio Section
- ================================================== -->
-<section id="portfolio">
-    
-    <div class="row">
-        
-        <div class="twelve columns collapsed">
-            
-            <h1>Check Out Some of related Links.</h1>
-            
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+		<div class="nine columns main-col">
+
+			<h3 class="cv-subhead">Awards</h3>
+			<ul class="award-list">
+				<li><span class="award-name">CIHR Doctoral Research Award &ndash; Canada Graduate Scholarship</span><span class="cv-date">May 2025</span></li>
+				<li><span class="award-name">UBC Four Year Fellowship (4YF)</span><span class="cv-date">Sep 2024</span></li>
+				<li><span class="award-name">Concordia University Conference and Exposition Award</span><span class="cv-date">Jan 2017</span></li>
+				<li><span class="award-name">Concordia University Graduate Studies Fellowship</span><span class="cv-date">2016 &ndash; 2017</span></li>
+			</ul>
+
+			<h3 class="cv-subhead">Honors</h3>
+			<ul class="award-list">
+				<li><span class="award-name">Golden Key International Honour Society</span><span class="cv-date">Aug 2016</span></li>
+				<li><span class="award-name">Honorable Mention, ACM-ICPC Regional Contest</span><span class="cv-date">2011</span></li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	<!-- Publications
+	 ----------------------------------------------- -->
+	<div class="row work">
+
+		<div class="three columns header-col">
+			<h1><span>Publications</span></h1>
+		</div>
+
+		<div class="nine columns main-col">
+
+			<ol class="pub-list">
+				<li>
+					<div class="cv-entry-head">
+						<span class="pub-title"><a href="https://cvpr.thecvf.com/virtual/2026/poster/37778" target="_blank" rel="noopener">Factorized Context Aggregation for Robust Cancer Risk Estimation via Soft Re-Ranked Retrieval and Hierarchical Anchors</a></span>
+						<span class="cv-date">2026</span>
+					</div>
+					<span class="pub-authors">P Azadi Moghadam, AK Mirabadi, B Maneshgar, H Farahani, A Bashashati</span>
+					<span class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>
+				</li>
+				<li>
+					<div class="cv-entry-head">
+						<span class="pub-title">Knowledge-Enhanced Representation Learning with Retrieval-Augmented Multimodal Fusion for Survival Prediction</span>
+						<span class="cv-date">2026</span>
+					</div>
+					<span class="pub-authors">Z Zhang, P Azadi, B Maneshgar, AK Mirabadi, N Alabi, H Farahani, et al.</span>
+					<span class="pub-venue">International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI)</span>
+				</li>
+				<li>
+					<div class="cv-entry-head">
+						<span class="pub-title">Evaluating Deep Learning Feature Towards Ranking of Immunocytochemistry Images</span>
+						<span class="cv-date">2019</span>
+					</div>
+					<span class="pub-authors">P Ahmadvand, B Maneshgar, P Ahmadvand</span>
+					<span class="pub-venue">4th International Conference on Pattern Recognition and Image Analysis (IPRIA)</span>
+				</li>
+				<li>
+					<div class="cv-entry-head">
+						<span class="pub-title">Automatic Adjustment of Stereoscopic Content for Long-Range Projections in Outdoor Areas</span>
+						<span class="cv-date">2017</span>
+					</div>
+					<span class="pub-authors">B Maneshgar, L Sujir, S Mudur, C Poullis</span>
+					<span class="pub-venue">25th ACM International Conference on Multimedia, pp. 100&ndash;108</span>
+				</li>
+				<li>
+					<div class="cv-entry-head">
+						<span class="pub-title">A Long-Range Vision System for Projection Mapping of Stereoscopic Content in Outdoor Areas</span>
+						<span class="cv-date">2017</span>
+					</div>
+					<span class="pub-authors">B Maneshgar, L Sujir, SP Mudur, C Poullis</span>
+					<span class="pub-venue">12th International Conference on Computer Graphics Theory and Applications (GRAPP), pp. 290&ndash;297</span>
+				</li>
+				<li>
+					<div class="cv-entry-head">
+						<span class="pub-title">Spatial Augmented Reality in Outdoor Areas Using Long-Range Vision Systems</span>
+						<span class="cv-date">2017</span>
+					</div>
+					<span class="pub-authors">B Maneshgar</span>
+					<span class="pub-venue">Master&rsquo;s thesis, Concordia University</span>
+				</li>
+			</ol>
+
+		</div>
+
+	</div>
+
+	<!-- Links
+	----------------------------------------------- -->
+	<div class="row work last links-row">
+
+		<div class="three columns header-col">
+			<h1><span>Links</span></h1>
+		</div>
+
+		<div class="nine columns main-col">
+			<div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+                
+                <div class="columns portfolio-item">
+                    <div class="item-wrap">
+                        
+                        <a href="#modal-05" title="">
+                            <img alt="AIM Lab" loading="lazy" src="images/portfolio/aimlab.jpg">
+                                <div class="overlay">
+                                    <div class="portfolio-item-meta">
+                                        <h5>AIM Lab</h5>
+                                        <p>AI in Medicine, UBC</p>
+                                    </div>
+                                </div>
+                                <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                        
+                    </div>
+                </div> <!-- item end -->
+                
+                <div class="columns portfolio-item">
+                    <div class="item-wrap">
+                        
+                        <a href="#modal-04" title="">
+                            <img alt="Huawei Technologies" loading="lazy" src="images/portfolio/huawei.webp">
+                                <div class="overlay">
+                                    <div class="portfolio-item-meta">
+                                        <h5>Huawei Technologies</h5>
+                                        <p>Artificial Intelligence</p>
+                                    </div>
+                                </div>
+                                <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                        
+                    </div>
+                </div> <!-- item end -->
+                
+                <div class="columns portfolio-item">
+                    <div class="item-wrap">
+                        
+                        <a href="#modal-03" title="">
+                            <img alt="Matrox" loading="lazy" src="images/portfolio/matrox.jpg">
+                                <div class="overlay">
+                                    <div class="portfolio-item-meta">
+                                        <h5>Matrox</h5>
+                                        <p>Image Processing</p>
+                                    </div>
+                                </div>
+                                <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                        
+                    </div>
+                </div> <!-- item end -->
+                
+                <div class="columns portfolio-item">
+                    <div class="item-wrap">
+                        
+                        <a href="#modal-06" title="">
+                            <img alt="The ICT" loading="lazy" src="images/portfolio/ictlab.jpg">
+                                <div class="overlay">
+                                    <div class="portfolio-item-meta">
+                                        <h5>The ICT</h5>
+                                        <p>The Immersive and Creative Technologies Lab</p>
+                                    </div>
+                                </div>
+                                <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                        
+                    </div>
+                </div> <!-- item end -->
                 
                 <div class="columns portfolio-item">
                     <div class="item-wrap">
                         
                         <a href="#modal-01" title="">
-                            <img alt="" src="images/portfolio/elastic.jpg">
+                            <img alt="Elastic Spaces" loading="lazy" src="images/portfolio/elastic.jpg">
                                 <div class="overlay">
                                     <div class="portfolio-item-meta">
                                         <h5>Elastic Spaces</h5>
@@ -461,79 +578,11 @@
                     <div class="item-wrap">
                         
                         <a href="#modal-02" title="">
-                            <img alt="" src="images/portfolio/3dgraphics.png">
+                            <img alt="3D Graphics" loading="lazy" src="images/portfolio/3dgraphics.png">
                                 <div class="overlay">
                                     <div class="portfolio-item-meta">
                                         <h5>3D Graphics</h5>
                                         <p>Computer Graphics, Concordia University</p>
-                                    </div>
-                                </div>
-                                <div class="link-icon"><i class="icon-plus"></i></div>
-                                </a>
-                        
-                    </div>
-                </div> <!-- item end -->
-
-                <div class="columns portfolio-item">
-                    <div class="item-wrap">
-                        
-                        <a href="#modal-03" title="">
-                            <img alt="" src="images/portfolio/matrox.jpg">
-                                <div class="overlay">
-                                    <div class="portfolio-item-meta">
-                                        <h5>Matrox</h5>
-                                        <p>Image Processing</p>
-                                    </div>
-                                </div>
-                                <div class="link-icon"><i class="icon-plus"></i></div>
-                                </a>
-                        
-                    </div>
-                </div> <!-- item end -->
-                
-                <div class="columns portfolio-item">
-                    <div class="item-wrap">
-                        
-                        <a href="#modal-04" title="">
-                            <img alt="" src="images/portfolio/huawei.png">
-                                <div class="overlay">
-                                    <div class="portfolio-item-meta">
-                                        <h5>Huawei Technologies</h5>
-                                        <p>Artificial Intelligence</p>
-                                    </div>
-                                </div>
-                                <div class="link-icon"><i class="icon-plus"></i></div>
-                                </a>
-                        
-                    </div>
-                </div> <!-- item end -->
-                
-                <div class="columns portfolio-item">
-                    <div class="item-wrap">
-                        
-                        <a href="#modal-05" title="">
-                            <img alt="" src="images/portfolio/underworld.jpg">
-                                <div class="overlay">
-                                    <div class="portfolio-item-meta">
-                                        <h5>3D Underworld</h5>
-                                        <p>3D Reconstruction, SLS</p>
-                                    </div>
-                                </div>
-                                <div class="link-icon"><i class="icon-plus"></i></div>
-                                </a>
-                        
-                    </div>
-                </div> <!-- item end -->
-                
-                <div class="columns portfolio-item">
-                    <div class="item-wrap">
-                        
-                        <a href="#modal-06" title="">
-                            <img alt="" src="images/portfolio/ictlab.jpg">
-                                <div class="overlay">
-                                    <div class="portfolio-item-meta">
-                                        <h5>The ICT</h5>
-                                        <p>The Immersive and Creative Technologies Lab</p>
                                     </div>
                                 </div>
                                 <div class="link-icon"><i class="icon-plus"></i></div>
@@ -546,7 +595,7 @@
                     <div class="item-wrap">
                         
                         <a href="#modal-07" title="">
-                            <img alt="" src="images/portfolio/sepehrshimi.jpg">
+                            <img alt="Sepehr Shimi Co." loading="lazy" src="images/portfolio/sepehrshimi.jpg">
                                 <div class="overlay">
                                     <div class="portfolio-item-meta">
                                         <h5>Sepehr Shimi Co.</h5>
@@ -563,7 +612,7 @@
                     <div class="item-wrap">
                         
                         <a href="#modal-08" title="">
-                            <img alt="" src="images/portfolio/subranco.jpg">
+                            <img alt="Subranco Co." loading="lazy" src="images/portfolio/subranco.jpg">
                                 <div class="overlay">
                                     <div class="portfolio-item-meta">
                                         <h5>Subranco Co.</h5>
@@ -577,27 +626,25 @@
                 </div>  <!-- item end -->
                 
             </div> <!-- portfolio-wrapper end -->
-            
-        </div> <!-- twelve columns end -->
-        
-        
-        
-        
-        <!-- Modal Popup
+		</div>
+
+	</div>
+
+	<!-- Modal Popup
          --------------------------------------------------------------- -->
         
         <div id="modal-01" class="popup-modal mfp-hide">
             
-            <img class="scale-with-grid" src="images/portfolio/modals/m-elastic.jpg" alt="" />
+            <img class="scale-with-grid" loading="lazy" src="images/portfolio/modals/m-elastic.jpg" alt="Elastic Spaces" />
             
             <div class="description-box">
                 <h4>Elastic Spaces</h4>
                 <p>Elastic 3D Space is an international research project, based at Concordia University in Montréal, exploring stereoscopy, 3D video and encompassing virtual and augmented reality. Growing over the last two years, with projects in the UK and Australia, Elastic 3D Space explores the potential future for stereoscopy (the technology behind VR and 3D cinema) through projected and electronic screen based methods.</p>
-                <span class="categories"><i class="fa fa-tag"></i>3D Space, Stereo Copy</span>
+                <span class="categories"><i class="fa fa-tag"></i>3D Space, Stereoscopy</span>
             </div>
             
             <div class="link-box">
-                <a href="http://www.elasticspaces.hexagram.ca">Details</a>
+                <a href="http://www.elasticspaces.hexagram.ca" target="_blank" rel="noopener">Details</a>
                 <a class="popup-modal-dismiss">Close</a>
             </div>
             
@@ -605,16 +652,16 @@
         
         <div id="modal-02" class="popup-modal mfp-hide">
             
-            <img class="scale-with-grid" src="images/portfolio/modals/m-3dgraphics.jpg" alt="" />
+            <img class="scale-with-grid" loading="lazy" src="images/portfolio/modals/m-3dgraphics.jpg" alt="3D Graphics" />
             
             <div class="description-box">
                 <h4>3D Graphics</h4>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                <p>Computer graphics research and teaching at Concordia University, where I worked as a teaching assistant for the Computer Graphics and Computer Vision courses.</p>
                 <span class="categories"><i class="fa fa-tag"></i>Computer Graphics, Concordia University</span>
             </div>
             
             <div class="link-box">
-                <a href="https://users.encs.concordia.ca/~graphics/">Details</a>
+                <a href="https://users.encs.concordia.ca/~graphics/" target="_blank" rel="noopener">Details</a>
                 <a class="popup-modal-dismiss">Close</a>
             </div>
             
@@ -623,7 +670,7 @@
         
         <div id="modal-03" class="popup-modal mfp-hide">
             
-            <img class="scale-with-grid" src="images/portfolio/modals/m-matrox.jpg" alt="" />
+            <img class="scale-with-grid" loading="lazy" src="images/portfolio/modals/m-matrox.jpg" alt="Matrox Ltd." />
             
             <div class="description-box">
                 <h4>Matrox Ltd.</h4>
@@ -632,7 +679,7 @@
             </div>
             
             <div class="link-box">
-                <a href="https://www.matrox.com/en/">Details</a>
+                <a href="https://www.matrox.com/en/" target="_blank" rel="noopener">Details</a>
                 <a class="popup-modal-dismiss">Close</a>
             </div>
             
@@ -640,7 +687,7 @@
         
         <div id="modal-04" class="popup-modal mfp-hide">
             
-            <img class="scale-with-grid" src="images/portfolio/modals/m-huawei.png" alt="" />
+            <img class="scale-with-grid" loading="lazy" src="images/portfolio/modals/m-huawei.webp" alt="Huawei Technologies" />
             
             <div class="description-box">
                 <h4>Huawei Technologies</h4>
@@ -649,7 +696,7 @@
             </div>
             
             <div class="link-box">
-                <a href="https://www.huawei.com/en/">Details</a>
+                <a href="https://www.huawei.com/en/" target="_blank" rel="noopener">Details</a>
                 <a class="popup-modal-dismiss">Close</a>
             </div>
             
@@ -657,16 +704,16 @@
         
         <div id="modal-05" class="popup-modal mfp-hide">
             
-            <img class="scale-with-grid" src="images/portfolio/modals/m-underworld.jpg" alt="" />
+            <img class="scale-with-grid" loading="lazy" src="images/portfolio/modals/m-aimlab.jpg" alt="AIM Lab" />
             
             <div class="description-box">
-                <h4>3D Underworld</h4>
-                <p>The primary objective of this project is the development of an innovative hardware and software solution for the rapid scanning and 3D reconstruction of objects.</p>
-                <span class="categories"><i class="fa fa-tag"></i>3D Reconstruction, SLS</span>
+                <h4>AIM Lab</h4>
+                <p>The Artificial Intelligence in Medicine Lab at the University of British Columbia works at the interface of computation, engineering and medicine. I am a PhD student in the lab, supervised by Dr. Ali Bashashati.</p>
+                <span class="categories"><i class="fa fa-tag"></i>AI in Medicine, Computational Pathology</span>
             </div>
             
             <div class="link-box">
-                <a href="http://www.3dunderworld.org/">Details</a>
+                <a href="https://www.aimlab.ca" target="_blank" rel="noopener">Details</a>
                 <a class="popup-modal-dismiss">Close</a>
             </div>
             
@@ -674,7 +721,7 @@
         
         <div id="modal-06" class="popup-modal mfp-hide">
             
-            <img class="scale-with-grid" src="images/portfolio/modals/m-ictlab.jpg" alt="" />
+            <img class="scale-with-grid" loading="lazy" src="images/portfolio/modals/m-ictlab.jpg" alt="The ICT LAB" />
             
             <div class="description-box">
                 <h4>The ICT LAB</h4>
@@ -683,7 +730,7 @@
             </div>
             
             <div class="link-box">
-                <a href="http://theictlab.org">Details</a>
+                <a href="http://theictlab.org" target="_blank" rel="noopener">Details</a>
                 <a class="popup-modal-dismiss">Close</a>
             </div>
             
@@ -691,7 +738,7 @@
         
         <div id="modal-07" class="popup-modal mfp-hide">
             
-            <img class="scale-with-grid" src="images/portfolio/modals/m-sepehrshimi.jpg" alt="" />
+            <img class="scale-with-grid" loading="lazy" src="images/portfolio/modals/m-sepehrshimi.jpg" alt="Sepehr Shimi Co." />
             
             <div class="description-box">
                 <h4>Sepehr Shimi Co.</h4>
@@ -700,7 +747,7 @@
             </div>
             
             <div class="link-box">
-                <a href="http://sepehrshimi.com/Default.aspx">Details</a>
+                <a href="http://sepehrshimi.com/Default.aspx" target="_blank" rel="noopener">Details</a>
                 <a class="popup-modal-dismiss">Close</a>
             </div>
             
@@ -708,7 +755,7 @@
         
         <div id="modal-08" class="popup-modal mfp-hide">
             
-            <img class="scale-with-grid" src="images/portfolio/modals/m-subranco.jpg" alt="" />
+            <img class="scale-with-grid" loading="lazy" src="images/portfolio/modals/m-subranco.jpg" alt="Subranco Co." />
             
             <div class="description-box">
                 <h4>Subranco Co.</h4>
@@ -717,72 +764,13 @@
             </div>
             
             <div class="link-box">
-                <a href="http://subran-co.com/en/">Details</a>
+                <a href="http://subran-co.com/en/" target="_blank" rel="noopener">Details</a>
                 <a class="popup-modal-dismiss">Close</a>
             </div>
             
-        </div><!-- modal-01 End -->
-        
-        
-    </div> <!-- row End -->
-    
-</section> <!-- Portfolio Section End-->
+        </div><!-- modal-08 End -->
 
-<!-- Testimonials Section
- ================================================== -->
-<section id="testimonials">
-    
-    <div class="text-container">
-        
-        <div class="row">
-            
-            <div class="two columns header-col">
-                
-                <h1><span>Notes</span></h1>
-                
-            </div>
-            
-            <div class="ten columns flex-container">
-                
-                <div class="flexslider">
-                    
-                    <ul class="slides">
-
-                        <li>
-                            <blockquote>
-                                <p style="text-align:justify" >
-                                Recently a group of my friends started to publish a culture magazine called Parvaz. You are welcome to <a href="https://www.facebook.com/groups/418393204930954/"> join </a>thier readers or collaborate for their future issues.
-                                    Here is how they introduce their magazine:
-                                    <br>Parvaz is biweekly sessions of arts, culture and human studies. Parvaz focuses on the most prestigious books and articles in the field of history, arts, poetry, philosophy, culture and languages of all nations. Parvaz welcomes all books and articles from different cultures and languages from all over the world. This is a journey that we all need to be united.
-                                </p>
-                                <cite>Behnam Maneshgar</cite>
-                            </blockquote>
-                        </li> <!-- slide ends -->
-                        
-                        
-                        <li>
-                            <blockquote>
-                                <p style="text-align:justify">You can't connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something - your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.
-                                <br>
-                                <br>
-                                </p>
-                                <cite>Steve Jobs</cite>
-                            </blockquote>
-                        </li> <!-- slide ends -->
-                        
-                        
-                        
-                    </ul>
-                    
-                </div> <!-- div.flexslider ends -->
-                
-            </div> <!-- div.flex-container ends -->
-            
-        </div> <!-- row ends -->
-        
-    </div>  <!-- text-container ends -->
-    
-</section> <!-- Testimonials Section End-->
+</section> <!-- Resume Section End-->
 
 
 <!-- Contact Section
@@ -790,23 +778,15 @@
 <section id="contact">
     
     <div class="row section-head">
-        
-        <div class="two columns header-col">
-            
-            <h1><span>Get In Touch.</span></h1>
-            
+        <div class="twelve columns">
+            <h1 class="section-title"><span>Contact Me</span></h1>
+            <p class="lead">Send me a message below, or email <a href="mailto:behnam@maneshgar.com">behnam@maneshgar.com</a>.</p>
         </div>
-        
-        <div class="ten columns">
-            
-            <p class="lead"> Please fill the following form or send me an Email wtih the subject starts with 'web:'.<br> Looking forward to receive your comments or questions.<br>
-        </div>
-        
     </div>
-    
+
     <div class="row">
         
-        <div class="eight columns">
+        <div class="twelve columns">
             
             <!-- form -->
             <form action="" method="post" id="contactForm" name="contactForm">
@@ -814,28 +794,28 @@
                     
                     <div>
                         <label for="contactName">Name <span class="required">*</span></label>
-                        <input type="text" value="" size="35" id="contactName" name="contactName">
+                        <input type="text" value="" size="35" id="contactName" name="contactName" required>
                             </div>
                     
                     <div>
                         <label for="contactEmail">Email <span class="required">*</span></label>
-                        <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+                        <input type="email" value="" size="35" id="contactEmail" name="contactEmail" required>
                             </div>
                     
                     <div>
-                        <label for="contactSubject">Subject</label>
-                        <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+                        <label for="contactSubject">Subject <span class="required">*</span></label>
+                        <input type="text" value="" size="35" id="contactSubject" name="contactSubject" required>
                             </div>
                     
                     <div>
                         <label for="contactMessage">Message <span class="required">*</span></label>
-                        <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                        <textarea cols="50" rows="6" id="contactMessage" name="contactMessage" required></textarea>
                     </div>
                     
                     <div>
-                        <button class="submit">Submit</button>
+                        <button type="submit" class="submit">Submit</button>
                         <span id="image-loader">
-                            <img alt="" src="images/loader.gif">
+                            <img alt="Sending" src="images/loader.gif">
                                 </span>
                     </div>
                     
@@ -843,31 +823,15 @@
             </form> <!-- Form End -->
             
             <!-- contact-warning -->
-            <div id="message-warning"> Error boy</div>
+            <div id="message-warning"></div>
             <!-- contact-success -->
             <div id="message-success">
-                <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+                <i class="fa fa-check"></i>Your email app should now open with the message ready to send. Thank you!<br>
             </div>
             
         </div>
         
         
-        <aside class="four columns footer-widgets">
-            
-            <div class="widget widget_contact">
-                
-                <h4>Address and Phone</h4>
-                <p class="address">
-                Behnam Maneshgar<br>
-                Vancouver, BC, Canada<br>
-                <a href="mailto:behnam@maneshgar.com?Subject=web:" target="_top">Send Email</a>
-                </p>
-                
-            </div>
-            
-            
-            
-        </aside>
         
     </div>
     
@@ -883,15 +847,12 @@
         <div class="twelve columns">
             
             <ul class="social-links">
-                <li><a href="https://www.facebook.com/maneshgar.behnam/"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://ca.linkedin.com/in/bmaneshgar"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/behnam_maneshgar/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://ca.linkedin.com/in/bmaneshgar" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/behnam_maneshgar/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
             </ul>
             
             <ul class="copyright">
-                <li>&copy; 2014 CeeVee</li>
-                <li>Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a></li>
-                <li>Sponsored by <a rel="nofollow" href="http://www.a2hosting.com/?utm___source=styleshoutdemo&utm_medium=__cpm&utm_content=&utm_campaign=">A2Hosting</a></li>
+                <li>&copy; <span id="year">2025</span> Behnam Maneshgar</li>
             </ul>
             
         </div>
@@ -904,11 +865,10 @@
 
 <!-- Java Script
  ================================================== -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>jQuery.migrateMute = true;</script>
+<script src="js/jquery-migrate-3.4.1.min.js"></script>
 
-<script src="js/jquery.flexslider.js"></script>
 <script src="js/waypoints.js"></script>
 <script src="js/jquery.fittext.js"></script>
 <script src="js/magnific-popup.js"></script>

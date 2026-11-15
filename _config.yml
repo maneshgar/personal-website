@@ -1,0 +1,40 @@
+# Site settings for GitHub Pages (Jekyll)
+title: Behnam Maneshgar
+description: News, books, finance and notes on what I'm learning, by Behnam Maneshgar.
+author: Behnam Maneshgar
+url: https://maneshgar.com
+baseurl: ""
+
+# Writing (blog)
+permalink: /writing/:year/:title/
+timezone: America/Vancouver
+excerpt_separator: <!--more-->
+
+# The topics shown as filters on the Writing page.
+# Add a new one here, then use its key in a post's `tags:`.
+writing_tags:
+  news: News
+  ai: "AI/ML"
+  books: Books
+  finance: Finance
+  notes: Notes
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: writing/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - WRITING.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - inc
