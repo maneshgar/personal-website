@@ -1,5 +1,6 @@
 ---
 title: "Why I Stopped Expecting a Big Crash"
+date: 2026-11-14 20:00:00 -0800
 tags: [finance]
 description: "On a log scale, the S&P 500 looks a lot more linear than the headlines suggest. Here's what that tells me, and what it doesn't."
 image: /images/journal/sp500-log-trend.jpg
