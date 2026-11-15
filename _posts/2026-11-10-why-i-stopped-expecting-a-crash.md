@@ -1,5 +1,5 @@
 ---
-title: "Why I Stopped Expecting a Big Crash"
+title: "Why I Stopped Expecting a Big Crash!"
 tags: [finance]
 description: "On a log scale, the S&P 500 looks a lot more linear than the headlines suggest. Here's what that tells me, and what it doesn't."
 ---

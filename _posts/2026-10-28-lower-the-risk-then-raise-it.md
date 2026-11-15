@@ -1,5 +1,5 @@
 ---
-title: "Lower the Risk, Then Raise It"
+title: "Lower the Risk, Then Raise It!"
 tags: [finance]
 image: /images/journal/risk-basket-thumb.jpg
 highlight: true
