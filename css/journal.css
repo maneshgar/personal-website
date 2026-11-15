@@ -699,3 +699,11 @@ html.theme-dark .w-body p.w-caption { color: #8D99A1 !important; }
 
 /* medium-size centred image */
 .w-body img.w-shot-medium { display: block; width: 460px; max-width: 100%; margin: 40px auto 24px; }
+
+/* no glow/shadow around the topic icon tiles (news, projects, finance) */
+.is-icon,
+.is-icon.is-project,
+.is-icon.is-finance,
+header .hero-card-cover.is-icon,
+header .hero-card-cover.is-icon.is-project,
+header .hero-card-cover.is-icon.is-finance { box-shadow: none !important; }
