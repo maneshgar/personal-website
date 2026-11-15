@@ -1,4 +1,5 @@
 ---
+redirect_from: /writing/2026/vam-ai-community/
 title: "VAM!: A Community I'm Learning a Lot From"
 tags: [ai]
 description: "Vancouver AI Meetup, led by UBC's Issam Laradji, is my top recommendation for learning about AI and connecting with the community."
@@ -6,8 +7,8 @@ link: https://www.linkedin.com/company/vam-nexus/posts/?feedView=all
 link_source: VAM! · LinkedIn
 link_title: "VAM! (Vancouver AI Meetup)"
 link_label: Follow VAM!
-link_icon: /images/writing/vam.jpg
-image: /images/writing/vam.jpg
+link_icon: /images/journal/vam.jpg
+image: /images/journal/vam.jpg
 ---
 
 **VAM!** (Vancouver AI Meetup) is a community I'm learning a lot from. It's

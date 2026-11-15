@@ -1,10 +1,11 @@
 ---
+redirect_from: /writing/2026/friends-lovers-and-the-big-terrible-thing/
 title: "Friends, Lovers, and the Big Terrible Thing"
 tags: [books]
 description: "Matthew Perry's candid memoir about fame, Friends, and his long struggle with addiction."
 book_title: "Friends, Lovers, and the Big Terrible Thing: A Memoir"
 book_author: Matthew Perry
-cover: /images/writing/friends-lovers-big-terrible-thing.jpg
+cover: /images/journal/friends-lovers-big-terrible-thing.jpg
 ---
 
 *Friends, Lovers, and the Big Terrible Thing* is Matthew Perry's memoir,

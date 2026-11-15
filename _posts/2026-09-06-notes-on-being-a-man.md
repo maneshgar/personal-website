@@ -1,10 +1,11 @@
 ---
+redirect_from: /writing/2026/notes-on-being-a-man/
 title: "Notes on Being a Man"
 tags: [books]
 description: "Less a manual for me than a window into Scott Galloway and how he sees life."
 book_title: "Notes on Being a Man"
 book_author: Scott Galloway
-cover: /images/writing/notes-on-being-a-man.jpg
+cover: /images/journal/notes-on-being-a-man.jpg
 ---
 
 *Notes on Being a Man* by Scott Galloway, the NYU marketing professor and

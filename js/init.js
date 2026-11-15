@@ -185,13 +185,13 @@
 
 
 /*----------------------------------------------------*/
-/*	Latest writing: staggered fade between groups of cards
+/*	Latest journal posts: staggered fade between groups of cards
 ------------------------------------------------------ */
 
    var $heroTrack = $('.hero-track');
    if ($heroTrack.length) {
       var $cards = $heroTrack.children('.hero-card');
-      var $dots = $('<div class="hero-dots" role="tablist" aria-label="Latest writing pages"></div>').insertAfter($heroTrack);
+      var $dots = $('<div class="hero-dots" role="tablist" aria-label="Latest journal pages"></div>').insertAfter($heroTrack);
       var perPage, pages, page = 0, timer = null, busy = false;
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var STAGGER = 110, FADE = 550, INTERVAL = 6000;

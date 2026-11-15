@@ -179,7 +179,7 @@ ul#nav li a {
 ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
 
-/* "Writing" opens its own page, so it is set apart as an outlined button */
+/* "Journal" opens its own page, so it is set apart as an outlined button */
 @media only screen and (min-width: 768px) {
    ul#nav li.nav-page { margin-left: 10px; }
    ul#nav li.nav-page a {
@@ -193,7 +193,7 @@ ul#nav li.current a { color: #F06000; }
    ul#nav li.nav-page a:hover { color: #11ABB0; border-color: #11ABB0; }
 }
 
-/* gentle fade when moving between the home page and Writing pages */
+/* gentle fade when moving between the home page and Journal pages */
 @view-transition { navigation: auto; }
 
 
@@ -1313,12 +1313,12 @@ header:after {
 }
 header .scrolldown a { z-index: 3; bottom: calc(30px + var(--hero-fade)); }
 header#home .banner { padding-bottom: calc(30px + var(--hero-fade)); }
-header#home.has-latest .banner { padding-bottom: calc(220px + var(--hero-fade)); }
+header#home.has-latest .banner { padding-bottom: calc(260px + var(--hero-fade)); }
 #about { padding-top: 64px; }
 @media only screen and (max-width: 767px) {
    header#home { --hero-fade: 180px; }
    header#home .banner { padding-bottom: calc(12px + var(--hero-fade)); }
-   header#home.has-latest .banner { padding-bottom: calc(180px + var(--hero-fade)); }
+   header#home.has-latest .banner { padding-bottom: calc(216px + var(--hero-fade)); }
 }
 @media only screen and (max-height: 640px) {
    header#home.has-latest .banner { padding-bottom: calc(30px + var(--hero-fade)); }
@@ -1372,7 +1372,7 @@ h1.section-title span { border-bottom: 3px solid #11ABB0; padding-bottom: 10px; 
 #contact h1.section-title:before { content: none; }
 
 /* ------------------------------------------------------------------ */
-/* Top menu: name on the left, links on the right (matches Writing)
+/* Top menu: name on the left, links on the right (matches Journal)
 /* ------------------------------------------------------------------ */
 .nav-brand-wrap { display: none; }
 @media only screen and (min-width: 768px) {
@@ -1413,7 +1413,7 @@ h1.section-title span { border-bottom: 3px solid #11ABB0; padding-bottom: 10px; 
 /* more room between the RESUME title and its content */
 #resume h1.section-title { margin-bottom: 72px; }
 
-/* links like /#resume from the Writing pages also land below the menu bar */
+/* links like /#resume from the Journal pages also land below the menu bar */
 @media only screen and (min-width: 768px) {
    section[id] { scroll-margin-top: 56px; }
 }
@@ -1535,4 +1535,27 @@ h1.section-title, #about h1.section-title { margin-bottom: 48px; }
    ul#nav li.current a { color: #11ABB0; }
    /* Bio: justified text leaves big gaps on narrow screens */
    #about .bio-text p { text-align: left; -webkit-hyphens: manual; hyphens: manual; }
+}
+
+/* Links on phones: an even 4-column grid, captions capped at two lines */
+@media only screen and (max-width: 767px) {
+   #resume .links-row #portfolio-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px 10px;
+      justify-items: center;
+      align-items: start;
+   }
+   #resume .links-row #portfolio-wrapper .columns.portfolio-item { width: 100%; max-width: 76px; }
+   #resume .links-row .portfolio-item .item-wrap img { width: 64px; height: 64px; margin: 0 auto; }
+   #resume .links-row .portfolio-item .portfolio-item-meta h5 {
+      font-size: 11px;
+      line-height: 14px;
+      height: 28px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow-wrap: anywhere;
+   }
 }

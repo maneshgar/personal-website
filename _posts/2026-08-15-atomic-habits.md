@@ -1,10 +1,11 @@
 ---
+redirect_from: /writing/2026/atomic-habits/
 title: "Atomic Habits"
 tags: [books]
 description: "Not much new if you've read others on the subject, but if this is your first book on habits, it's a must-read."
 book_title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones"
 book_author: James Clear
-cover: /images/writing/atomic-habits.jpg
+cover: /images/journal/atomic-habits.jpg
 ---
 
 I know I'm just repeating what everyone else says about *Atomic Habits* by James

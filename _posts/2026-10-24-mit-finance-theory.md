@@ -1,8 +1,9 @@
 ---
+redirect_from: /writing/2026/mit-finance-theory/
 title: "Learning Finance with MIT's Finance Theory I"
 tags: [finance]
 description: "I'm halfway through MIT's free Finance Theory I course and loving it. Here's why you should watch it too."
-image: /images/writing/mit-finance-theory.jpg
+image: /images/journal/mit-finance-theory.jpg
 link: https://www.youtube.com/watch?v=HdHlfiOAJyE&list=PLUl4u3cNGP63B2lDhyKOsImI7FjCf6eDW
 link_source: MIT OpenCourseWare · YouTube
 link_title: "MIT 15.401 Finance Theory I, Fall 2008"

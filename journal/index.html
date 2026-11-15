@@ -1,17 +1,18 @@
 ---
-layout: writing
-title: Writing
-description: News, books I've read, finance, and notes on what I've learned, by Behnam Maneshgar.
+layout: journal
+title: Journal
+redirect_from: /writing/
+description: News, projects, books I've read, finance, and notes on what I've learned, by Behnam Maneshgar.
 ---
 <section class="w-list">
 
 	<div class="w-list-head">
-		<h1>Writing</h1>
-		<p class="w-intro">News, books I&rsquo;ve read, finance, and notes on what I&rsquo;ve learned and found interesting.</p>
+		<h1>Journal</h1>
+		<p class="w-intro">News, projects, books I&rsquo;ve read, finance, and notes on what I&rsquo;ve learned and found interesting.</p>
 
 		<div class="w-filters" role="group" aria-label="Filter by topic">
 			<button type="button" class="w-filter is-active" data-tag="all">All</button>
-			{% for t in site.writing_tags %}<button type="button" class="w-filter" data-tag="{{ t[0] }}">{{ t[1] }}</button>{% endfor %}
+			{% for t in site.journal_tags %}<button type="button" class="w-filter" data-tag="{{ t[0] }}">{{ t[1] }}</button>{% endfor %}
 		</div>
 	</div>
 
@@ -21,11 +22,11 @@ description: News, books I've read, finance, and notes on what I've learned, by 
 		<li class="w-card" data-tags="{{ post.tags | join: ' ' }}">
 			<a href="{{ post.url }}">
 				{% assign thumb = post.cover | default: post.image %}
-				{% if thumb %}<img class="w-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif post.tags contains 'news' %}<span class="w-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% endif %}
+				{% if thumb %}<img class="w-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif post.tags contains 'news' %}<span class="w-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="w-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% endif %}
 				<div class="w-card-text">
 					<p class="w-meta">
 						<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
-						{% for t in post.tags %}<span class="w-tag">{{ site.writing_tags[t] | default: t }}</span>{% endfor %}
+						{% for t in post.tags %}<span class="w-tag">{{ site.journal_tags[t] | default: t }}</span>{% endfor %}
 					</p>
 					<h2>{{ post.title }}</h2>
 					<p class="w-excerpt">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 180 }}</p>

@@ -1,5 +1,5 @@
 ---
-# Processed by Jekyll so the home page can list the latest writing.
+# Processed by Jekyll so the home page can list the latest journal posts.
 ---
 <!DOCTYPE html>
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
@@ -35,7 +35,7 @@
 	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="css/media-queries.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/writing.css">
+	<link rel="stylesheet" href="css/journal.css">
 	{% feed_meta %}
 								
 	<!-- Script
@@ -91,7 +91,7 @@
 			<li><a class="smoothscroll" href="#about">Bio</a></li>
 			<li><a class="smoothscroll" href="#resume">Resume</a></li>
 			<li><a class="smoothscroll" href="#contact">Contact</a></li>
-			<li class="nav-page"><a href="/writing/">Writing</a></li>
+			<li class="nav-page"><a href="/journal/">Journal</a></li>
 		</ul> <!-- end #nav -->
 		
 	</nav> <!-- end #nav-wrap -->
@@ -111,16 +111,17 @@
 	
 	{% if site.posts.size > 0 %}
 	<div class="hero-latest-wrap">
-	<p class="hero-latest-label"><span>Latest writing</span><a href="/writing/">See all &rarr;</a></p>
-	<div class="hero-latest" aria-label="Latest writing">
+	<p class="hero-latest-label"><span>From the journal</span><a href="/journal/">See all &rarr;</a></p>
+	<nav class="hero-topics" aria-label="Journal topics">{% for t in site.journal_tags %}{% assign key = t[0] %}{% assign tagged = site.tags[key] %}{% if tagged and tagged.size > 0 %}<a href="/journal/#{{ key }}">{{ t[1] }}</a>{% endif %}{% endfor %}</nav>
+	<div class="hero-latest" aria-label="Latest journal posts">
 		<div class="hero-track">
 			{% for post in site.posts limit: 20 %}
 			{% assign thumb = post.cover | default: post.image %}
 			{% assign is_news = false %}{% if post.tags contains 'news' %}{% assign is_news = true %}{% endif %}
-			<a class="hero-card{% if thumb or is_news %} has-cover{% endif %}" href="{{ post.url }}">
-				{% if thumb %}<img class="hero-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif is_news %}<span class="hero-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% endif %}
+			<a class="hero-card{% if thumb or is_news or post.tags contains 'projects' %} has-cover{% endif %}" href="{{ post.url }}">
+				{% if thumb %}<img class="hero-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif is_news %}<span class="hero-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="hero-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% endif %}
 				<span class="hero-card-body">
-					<span class="hero-card-meta">{{ post.date | date: '%b %-d, %Y' }}{% for t in post.tags limit: 1 %} &middot; {{ site.writing_tags[t] | default: t }}{% endfor %}</span>
+					<span class="hero-card-meta">{{ post.date | date: '%b %-d, %Y' }}{% for t in post.tags limit: 1 %} &middot; {{ site.journal_tags[t] | default: t }}{% endfor %}</span>
 					<span class="hero-card-title">{{ post.title }}</span>
 					{% if post.book_author %}<span class="hero-card-book">{{ post.book_title | default: post.title }} &mdash; {{ post.book_author }}{% if post.rating %} <span class="hero-card-stars" aria-label="{{ post.rating }} out of 5">{% for i in (1..5) %}{% if i <= post.rating %}&#9733;{% else %}&#9734;{% endif %}{% endfor %}</span>{% endif %}</span>{% endif %}
 					<span class="hero-card-text">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 160 }}</span>

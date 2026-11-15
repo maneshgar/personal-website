@@ -5,25 +5,27 @@ author: Behnam Maneshgar
 url: https://maneshgar.com
 baseurl: ""
 
-# Writing (blog)
-permalink: /writing/:year/:title/
+# Journal (blog)
+permalink: /journal/:year/:title/
 timezone: America/Vancouver
 excerpt_separator: <!--more-->
 
-# The topics shown as filters on the Writing page.
+# The topics shown as filters on the Journal page.
 # Add a new one here, then use its key in a post's `tags:`.
-writing_tags:
+journal_tags:
   news: News
   ai: "AI/ML"
+  projects: Projects
   books: Books
   finance: Finance
   notes: Notes
 
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 feed:
-  path: writing/feed.xml
+  path: journal/feed.xml
 
 defaults:
   - scope:
@@ -33,7 +35,7 @@ defaults:
       layout: post
 
 exclude:
-  - WRITING.md
+  - JOURNAL.md
   - Gemfile
   - Gemfile.lock
   - vendor

@@ -1,9 +1,9 @@
 /* ------------------------------------------------------------------ */
-/* Writing (blog) pages
+/* Journal (blog) pages
 /* Shares fonts and colors with the home page.
 /* ------------------------------------------------------------------ */
 
-body.writing-page { background: #F4F7F7; }
+body.journal-page { background: #F4F7F7; }
 
 /* top bar */
 .w-topbar {
@@ -313,53 +313,7 @@ a.w-tag:hover { background: #11ABB0; color: #fff; }
 }
 
 /* footer: the home page fixes it relative to sections; keep it simple here */
-body.writing-page footer { padding: 20px 0; }
-
-/* home page: latest writing strip */
-#latest-writing {
-   background: #fff;
-   padding: 56px 0 40px;
-}
-#latest-writing h1 {
-   font: 15px/24px 'opensans-bold', sans-serif;
-   text-transform: uppercase;
-   letter-spacing: 2px;
-   text-align: center;
-   color: #313131;
-   margin-bottom: 32px;
-}
-#latest-writing h1 span { border-bottom: 3px solid #11ABB0; padding-bottom: 6px; }
-#latest-writing .w-latest {
-   list-style: none;
-   margin: 0;
-   padding: 0;
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-   gap: 16px;
-}
-#latest-writing .w-latest li { margin: 0; }
-#latest-writing .w-latest a {
-   display: block;
-   height: 100%;
-   padding: 16px 18px;
-   background: #F8FAFA;
-   border-left: 3px solid #11ABB0;
-   border-radius: 0 8px 8px 0;
-   color: inherit;
-   transition: box-shadow .2s ease, transform .2s ease;
-}
-#latest-writing .w-latest a:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transform: translateY(-2px); }
-#latest-writing .w-latest h2 { font: 16px/23px 'opensans-bold', sans-serif; color: #2B2B2B; margin: 0; }
-#latest-writing .w-all { text-align: center; margin: 24px 0 0; }
-#latest-writing .w-all a {
-   font: 13px/20px 'opensans-semibold', 'opensans-bold', sans-serif;
-   color: #0B7F83;
-   background: #E7F6F6;
-   border-radius: 16px;
-   padding: 6px 16px;
-   display: inline-block;
-}
-#latest-writing .w-all a:hover { background: #11ABB0; color: #fff; }
+body.journal-page footer { padding: 20px 0; }
 
 @media only screen and (max-width: 600px) {
    .w-main { padding-top: 36px; }
@@ -371,7 +325,7 @@ body.writing-page footer { padding: 20px 0; }
 /* the template decorates blockquotes with a large quote mark; not wanted in posts */
 .w-body blockquote:before, .w-body blockquote:after { content: none; display: none; }
 
-/* "Writing" set apart as an outlined button, matching the home page menu */
+/* "Journal" set apart as an outlined button, matching the home page menu */
 .w-nav li.nav-page a, .w-nav li.nav-page a:visited {
    line-height: 22px;
    padding: 4px 14px;
@@ -381,7 +335,7 @@ body.writing-page footer { padding: 20px 0; }
 }
 .w-nav li { display: flex; align-items: center; }
 
-/* latest writing: frosted glass cards drifting slowly right-to-left
+/* latest journal posts: frosted glass cards drifting slowly right-to-left
    along the bottom of the welcome photo (loops over the 20 newest posts) */
 header .hero-latest-wrap {
    position: absolute;
@@ -625,3 +579,44 @@ header .hero-card-cover.is-icon {
 /* the welcome cards skip the book line (it repeats the title); the post page shows it */
 header .hero-card-book { display: none; }
 header .hero-card, header .hero-card:visited { align-items: center; }
+
+/* projects: layers icon on a teal-to-purple tile, and the project info card */
+.is-icon.is-project { background: linear-gradient(135deg, #1CC8C4 0%, #3B8BD9 50%, #7B5CE0 100%); box-shadow: 0 6px 16px rgba(91, 92, 224, .3), inset 0 1px 0 rgba(255, 255, 255, .35); }
+header .hero-card-cover.is-icon.is-project { background: linear-gradient(135deg, rgba(28, 200, 196, .85) 0%, rgba(59, 139, 217, .85) 50%, rgba(123, 92, 224, .85) 100%); }
+.w-project-icon { flex-shrink: 0; width: 64px; height: 64px; border-radius: 16px; }
+.w-project-paper { font: 14px/22px 'opensans-regular', sans-serif; color: #5A6066; margin-top: 4px !important; }
+
+/* topic shortcuts under "From the journal" on the welcome photo */
+header .hero-topics {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin: -2px 0 14px;
+   padding: 0 16px;
+}
+header .hero-topics a, header .hero-topics a:visited {
+   font: 12px/18px 'opensans-semibold', 'opensans-bold', sans-serif;
+   letter-spacing: .5px;
+   color: #fff;
+   padding: 4px 13px;
+   border-radius: 14px;
+   background: rgba(255, 255, 255, .10);
+   border: 1px solid rgba(255, 255, 255, .25);
+   -webkit-backdrop-filter: blur(8px);
+   backdrop-filter: blur(8px);
+   transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+header .hero-topics a:hover, header .hero-topics a:focus {
+   background: rgba(17, 171, 176, .35);
+   border-color: rgba(17, 171, 176, .9);
+   color: #fff;
+}
+@media only screen and (max-width: 767px) {
+   /* one swipeable line on phones */
+   header .hero-topics { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; padding: 0 20px; }
+   header .hero-topics::-webkit-scrollbar { display: none; }
+   header .hero-topics a { flex-shrink: 0; }
+}
+.w-book.w-project img.w-project-logo { flex-shrink: 0; width: 200px; max-width: 40%; height: auto; border-radius: 8px; box-shadow: none; }
+@media only screen and (max-width: 600px) { .w-project { flex-wrap: wrap; } .w-book.w-project img.w-project-logo { max-width: 100%; width: 220px; } }

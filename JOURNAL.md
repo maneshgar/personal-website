@@ -8,7 +8,7 @@ YYYY-MM-DD-short-title.md
 
 for example `_posts/2026-11-20-thinking-fast-and-slow.md`. The date in the name is the
 post's date; the short title becomes its web address
-(`maneshgar.com/writing/2026/thinking-fast-and-slow/`).
+(`maneshgar.com/journal/2026/thinking-fast-and-slow/`).
 
 ## Easiest way: on github.com
 
@@ -22,7 +22,7 @@ post's date; the short title becomes its web address
 ```markdown
 ---
 title: "Your Title"
-tags: [news]           # news, ai, books, finance or notes (or several: [books, finance])
+tags: [news]           # news, ai, projects, books, finance or notes (or several: [books, finance])
 description: "One sentence for the post list and link previews."
 
 # News posts that point to another page (optional; shows a link card):
@@ -31,11 +31,16 @@ link_source: Where it's from        # e.g. UBC Graduate School
 link_title: "Title of that page"
 link_label: Read the article        # text on the button
 
+# Project posts only (shows a project card):
+project_where: Lab or company name
+project_period: 2016 – 2017
+project_paper: "Paper title (Venue Year)"   # optional
+
 # Book posts only (delete these lines for other posts):
 book_title: "The Book's Title"
 book_author: Author Name
 rating: 4              # 1-5
-cover: /images/writing/my-cover.jpg   # upload the image to images/writing/
+cover: /images/journal/my-cover.jpg   # upload the image to images/journal/
 ---
 
 Your first paragraph (shown as the preview).
@@ -49,8 +54,8 @@ Drafts can go in a `_drafts/` folder (drafts are never published).
 
 ## Adding a new topic
 
-Add a line under `writing_tags:` in `_config.yml`, for example `research: Research`,
-then use `tags: [research]` in a post. A filter button appears on the Writing page.
+Add a line under `journal_tags:` in `_config.yml`, for example `research: Research`,
+then use `tags: [research]` in a post. A filter button appears on the Journal page.
 
 ## Previewing on your Mac (optional)
 

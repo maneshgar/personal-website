@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>{% if page.title %}{{ page.title }} · {% endif %}Writing · {{ site.title }}</title>
+	<title>{% if page.title and page.title != "Journal" %}{{ page.title }} · {% endif %}Journal · {{ site.title }}</title>
 	<meta name="description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
 	<meta name="author" content="{{ site.author }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="canonical" href="{{ page.url | absolute_url }}">
 	<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-	<meta property="og:title" content="{{ page.title | default: 'Writing' }}">
+	<meta property="og:title" content="{{ page.title | default: 'Journal' }}">
 	<meta property="og:description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
 	<meta property="og:url" content="{{ page.url | absolute_url }}">
 	<meta property="og:image" content="{{ page.cover | default: page.image | default: '/images/profilepic.png' | absolute_url }}">
@@ -21,14 +21,14 @@
 	<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/css/default.css">
 	<link rel="stylesheet" href="/css/layout.css">
-	<link rel="stylesheet" href="/css/writing.css">
+	<link rel="stylesheet" href="/css/journal.css">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
 
-<body class="writing-page">
+<body class="journal-page">
 
 <nav class="w-topbar">
 	<div class="w-topbar-inner">
@@ -37,7 +37,7 @@
 			<li><a href="/#about">Bio</a></li>
 			<li><a href="/#resume">Resume</a></li>
 			<li><a href="/#contact">Contact</a></li>
-			<li class="nav-page"><a href="/writing/" class="current">Writing</a></li>
+			<li class="nav-page"><a href="/journal/" class="current">Journal</a></li>
 		</ul>
 	</div>
 </nav>
@@ -52,7 +52,7 @@
 			<ul class="social-links">
 				<li><a href="https://ca.linkedin.com/in/bmaneshgar" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
 				<li><a href="https://www.instagram.com/behnam_maneshgar/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
-				<li><a href="/writing/feed.xml" aria-label="RSS feed"><i class="fa fa-rss"></i></a></li>
+				<li><a href="/journal/feed.xml" aria-label="RSS feed"><i class="fa fa-rss"></i></a></li>
 			</ul>
 			<ul class="copyright">
 				<li>&copy; {{ site.time | date: '%Y' }} {{ site.author }}</li>

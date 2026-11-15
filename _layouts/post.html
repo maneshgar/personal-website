@@ -1,15 +1,15 @@
 ---
-layout: writing
+layout: journal
 ---
 {% assign words = content | strip_html | number_of_words %}
 {% assign minutes = words | divided_by: 200 | plus: 1 %}
 <article class="w-post">
 
-	<a class="w-crumb" href="/writing/">&larr; Writing</a>
+	<a class="w-crumb" href="/journal/">&larr; Journal</a>
 
 	<div class="w-post-head">
 		<p class="w-meta">
-			{% for t in page.tags %}<a class="w-tag" href="/writing/#{{ t }}">{{ site.writing_tags[t] | default: t }}</a>{% endfor %}
+			{% for t in page.tags %}<a class="w-tag" href="/journal/#{{ t }}">{{ site.journal_tags[t] | default: t }}</a>{% endfor %}
 			<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
 			<span class="w-dot" aria-hidden="true">&middot;</span>
 			<span>{{ minutes }} min read</span>
@@ -34,6 +34,18 @@ layout: writing
 	</aside>
 	{% endif %}
 
+	{% if page.project_where or page.project_period %}
+	<aside class="w-book w-project">
+		{% if page.project_logo %}<img class="w-project-logo" src="{{ page.project_logo }}" alt="{{ page.title }} logo">{% else %}<span class="w-project-icon is-icon is-project">{% include project-icon.svg %}</span>{% endif %}
+		<div>
+			<p class="w-book-label">The project</p>
+			<p class="w-book-title">{{ page.project_where }}</p>
+			{% if page.project_period %}<p class="w-book-author">{{ page.project_period }}</p>{% endif %}
+			{% if page.project_paper %}<p class="w-project-paper">Paper: {{ page.project_paper }}</p>{% endif %}
+		</div>
+	</aside>
+	{% endif %}
+
 	<div class="w-body">
 		{{ content }}
 	</div>
@@ -52,7 +64,7 @@ layout: writing
 	{% endif %}
 
 	{% if page.previous or page.next %}
-	<nav class="w-post-nav" aria-label="More writing">
+	<nav class="w-post-nav" aria-label="More from the journal">
 		{% if page.previous %}
 		<a class="w-nav-card" href="{{ page.previous.url }}">
 			<span class="w-nav-label">&larr; Older</span>

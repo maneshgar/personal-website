@@ -1,4 +1,5 @@
 ---
+redirect_from: /writing/2026/ubc-meet-our-students/
 title: "Featured in UBC's “Meet our Students” Series"
 tags: [news]
 description: "Excited to be highlighted in the UBC Graduate School's Meet our Students series."
