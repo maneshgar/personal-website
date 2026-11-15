@@ -1665,3 +1665,8 @@ header .banner-text h1 {
    font-size: 15px;
    line-height: 1.85;
 }
+
+/* welcome headline: final size from the first frame (was resized by JS) */
+header .banner .banner-text h1.responsive-headline {
+   font-size: clamp(30px, 5.3vw, 46px) !important;
+}

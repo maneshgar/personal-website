@@ -10,9 +10,7 @@
 /* FitText Settings
 ------------------------------------------------------ */
 
-    setTimeout(function() {
-	   $('h1.responsive-headline').fitText(1.6, { minFontSize: '30px', maxFontSize: '46px' });
-	 }, 100);
+    // headline size is set in CSS (no resize after load, so no flash)
 
 
 /*----------------------------------------------------*/
