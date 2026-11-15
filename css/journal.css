@@ -691,3 +691,11 @@ html.theme-dark .w-tag.w-highlight { background: rgba(245, 196, 81, .16) !import
 .is-icon.is-finance { background: linear-gradient(135deg, #1CC8C4 0%, #11ABB0 55%, #0B7F83 100%); box-shadow: 0 6px 16px rgba(17, 171, 176, .3); }
 header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg, rgba(28, 200, 196, .85) 0%, rgba(17, 171, 176, .85) 55%, rgba(11, 127, 131, .85) 100%); }
 .is-icon.is-finance svg { width: 70%; height: 70%; filter: none; }
+
+/* image captions */
+.w-body p.w-caption { text-align: center !important; font-size: 13px !important; line-height: 1.6 !important; color: #8A949A !important; margin: -12px auto 26px; max-width: 60%; }
+html.theme-dark .w-body p.w-caption { color: #8D99A1 !important; }
+@media only screen and (max-width: 600px) { .w-body p.w-caption { max-width: 100%; } }
+
+/* medium-size centred image */
+.w-body img.w-shot-medium { display: block; width: 460px; max-width: 100%; margin: 40px auto 24px; }

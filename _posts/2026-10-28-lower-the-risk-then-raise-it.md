@@ -1,6 +1,7 @@
 ---
 title: "Lower the Risk, Then Raise It"
 tags: [finance]
+image: /images/journal/risk-basket-thumb.jpg
 highlight: true
 description: "My favourite investing strategy for beginners and long-term investors: simplify with an index, then add the performance back with leverage."
 ---
@@ -34,6 +35,10 @@ index, you removed most of the variables from the equation and gave up some
 performance in return. With leverage, you take that performance back. You end
 up with a much simpler equation, fewer things to get right, and returns that can
 still compete.
+
+![A basket of eggs balanced against eggs spread out on a seesaw](/images/journal/risk-basket.jpg){: .w-shot-medium}
+*The idea: one leveraged basket of eggs weighs roughly the same as all the single eggs you'd pick by hand after a lot of effort. I tried to generate a clearer image that actually explains this, but AI tools aren't quite there yet. At least not the free ones.*
+{: .w-caption}
 
 From there, the only real decision left is timing at a high level. When it feels
 like a good time to be in the market, you stay in. When something starts to
