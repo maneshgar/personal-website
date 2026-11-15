@@ -659,3 +659,7 @@ header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg,
    .w-post-head h1 { font-size: 24px; line-height: 32px; }
    .w-body, .w-body p, .w-body li, .w-body > p:first-child { font-size: 15px; line-height: 1.85; }
 }
+
+/* one consistent body style: no larger/darker first paragraph */
+.w-body > p:first-child { font-size: inherit !important; line-height: inherit !important; color: inherit !important; }
+html.theme-dark .w-body > p:first-child { color: inherit !important; }
