@@ -676,3 +676,13 @@ html.theme-dark .w-body img { border-color: #2E3841; }
 header .hero-star { color: #F5C451; }
 .w-tag.w-highlight { background: #FFF4D6; color: #9A6B00; }
 html.theme-dark .w-tag.w-highlight { background: rgba(245, 196, 81, .16) !important; color: #F5C451 !important; }
+
+/* Journal top bar on phones: hide the name, keep links + theme button on one row */
+@media only screen and (max-width: 600px) {
+   .w-brand { display: none; }
+   .w-topbar-inner { justify-content: center; min-height: 52px; padding: 0 12px; }
+   .w-nav { flex-wrap: nowrap; align-items: center; gap: 0 14px; }
+   .w-nav a, .w-nav a:visited { font-size: 10.5px; letter-spacing: 1.5px; line-height: 52px; }
+   .w-nav li.nav-page a { line-height: 20px; padding: 3px 10px; }
+   .w-nav li.nav-theme .theme-toggle { margin-left: 0; width: 28px; height: 28px; }
+}
