@@ -1,0 +1,22 @@
+<script>
+/* Night theme: follow the device setting unless the visitor chose one. */
+(function () {
+  var root = document.documentElement, saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  function apply(dark) { root.classList.toggle('theme-dark', dark); }
+  apply(saved ? saved === 'dark' : !!(mq && mq.matches));
+  if (mq && mq.addEventListener) mq.addEventListener('change', function (e) {
+    var s = null; try { s = localStorage.getItem('theme'); } catch (err) {}
+    if (!s) apply(e.matches);
+  });
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.theme-toggle');
+    if (!btn) return;
+    e.preventDefault();
+    var dark = !root.classList.contains('theme-dark');
+    apply(dark);
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (err) {}
+  });
+})();
+</script>

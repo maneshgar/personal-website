@@ -1658,3 +1658,10 @@ header .banner-text h1 {
    line-height: 1.2em;
    margin-bottom: 16px;
 }
+
+/* Bio columns: same serif as the lead paragraph */
+#about .bio-text.bio-columns > p:not(:first-child) {
+   font-family: 'librebaskerville-regular', Georgia, serif;
+   font-size: 15px;
+   line-height: 1.85;
+}
