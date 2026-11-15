@@ -112,7 +112,7 @@
 	{% if site.posts.size > 0 %}
 	<div class="hero-latest-wrap">
 	<p class="hero-latest-label"><span>From the journal</span><a href="/journal/">See all &rarr;</a></p>
-	<nav class="hero-topics" aria-label="Journal topics">{% for t in site.journal_tags %}{% assign key = t[0] %}{% assign tagged = site.tags[key] %}{% if tagged and tagged.size > 0 %}<a href="/journal/#{{ key }}">{{ t[1] }}</a>{% endif %}{% endfor %}</nav>
+	<nav class="hero-topics" aria-label="Journal topics">{% for t in site.journal_tags %}{% assign key = t[0] %}{% assign tagged = site.tags[key] %}{% if tagged and tagged.size > 0 and key != 'projects' %}<a href="/journal/#{{ key }}">{{ t[1] }}</a>{% endif %}{% endfor %}</nav>
 	<div class="hero-latest" aria-label="Latest journal posts">
 		<div class="hero-track">
 			{% for post in site.posts limit: 20 %}
@@ -145,12 +145,6 @@
 <section id="about">
 
 	<div class="row">
-		<div class="twelve columns">
-			<h1 class="section-title"><span>Bio</span></h1>
-		</div>
-	</div>
-
-	<div class="row">
 		
 		<div class="three columns">
 			
@@ -160,11 +154,12 @@
 		
 		<div class="nine columns main-col">
 			
-				<div class="bio-text">
-				<p>I am a researcher specializing in machine learning and computer vision. My journey into computer science began in 2010 when I enrolled in the Software Engineering program at Isfahan University, Iran. After graduating in 2014, I moved to Canada to pursue a Master’s in Computer Science at Concordia University. During my time there, I had the privilege of working under the supervision of Dr. Sudhir P. Mudur and Dr. Charalambos Poullis in the <a href="http://theictlab.org/">Immersive and Creative Technologies (ICT) Lab</a>, where I deepened my expertise in computer vision.</p>
-				<p>After completing my degree, I transitioned into industry and spent four rewarding years as a software designer at <a href="http://matrox.com/">Matrox Electronic Systems</a>, gaining hands-on experience across various areas of software development. In 2021, driven by a continued passion for innovation, I relocated to Vancouver to join <a href="http://www.huawei.com/en/">Huawei Technologies</a>, where I worked on cutting-edge challenges in autonomous driving, focusing on the three pillars of Perception, Prediction, and Planning.</p>
-				<p>In 2024, I made the decision to return to academia and pursue my PhD. I am currently a PhD student in Bioinformatics at the University of British Columbia under the supervision of Dr. Ali Bashashati. My research focuses on computational biology and genomics. For more details, please visit the <a href="https://www.aimlab.ca">AIMLab website</a>.</p>
-				<p>My journey is ongoing—stay tuned for more updates!</p>
+				<div class="bio-text bio-columns">
+				<p>I am a machine learning researcher whose work spans machine vision, autonomous driving, and computational biology. My background combines academic research with industry experience, and I work at the intersection of these fields, which are becoming more closely connected every day.</p>
+				<p>My path in computer science began in 2010, when I enrolled in the Software Engineering program at Isfahan University in Iran. After graduating in 2014, I moved to Canada to pursue a master&rsquo;s degree in computer science at Concordia University. There, I worked with Dr. Sudhir P. Mudur and Dr. Charalambos Poullis in the <a href="http://theictlab.org/">Immersive and Creative Technologies Lab</a>, where I deepened my expertise in computer vision.</p>
+				<p>After my master&rsquo;s, I joined <a href="http://matrox.com/">Matrox Electronic Systems</a> as a software designer, at a time when deep learning was first moving from research into industry. Over four years, I applied it to real machine vision problems, from segmentation to inspection, and led a team in prototyping machine learning solutions for use in the field. In 2021, I moved to Vancouver to join <a href="http://www.huawei.com/en/">Huawei Technologies</a>, where I worked on autonomous driving across perception, prediction, and planning.</p>
+				<p>Over time, I became interested in biology and how AI could help us better understand biological systems and human health. In 2024, I returned to academia to pursue a PhD in Bioinformatics at the University of British Columbia, under the supervision of Dr. Ali Bashashati at the <a href="https://www.aimlab.ca">AIMLab</a>. My research brings my machine learning background to questions in human biology, starting with foundation models for gene expression data.</p>
+				<p>My journey is still unfolding, and I try to keep this website up to date as it does. Thanks for stopping by!</p>
 			</div>			
 			<div class="row">
 				
@@ -413,6 +408,32 @@
 		</div>
 
 	</div>
+
+	<!-- Projects (the 3 most recent project posts from the Journal)
+	----------------------------------------------- -->
+	{% assign projects = site.posts | where_exp: "p", "p.tags contains 'projects'" %}
+	{% if projects.size > 0 %}
+	<div class="row work projects-row">
+
+		<div class="three columns header-col">
+			<h1><span>Projects</span></h1>
+		</div>
+
+		<div class="nine columns main-col">
+			{% for p in projects limit: 3 %}
+			<div class="cv-entry">
+				<div class="cv-entry-head">
+					<h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
+					{% if p.project_period %}<span class="cv-date">{{ p.project_period }}</span>{% endif %}
+				</div>
+				{% if p.project_where %}<p class="info">{{ p.project_where }}</p>{% endif %}
+			</div>
+			{% endfor %}
+			<a class="pub-toggle projects-all" href="/journal/#projects">See all my projects in the Journal &rarr;</a>
+		</div>
+
+	</div>
+	{% endif %}
 
 	<!-- Publications
 	 ----------------------------------------------- -->
