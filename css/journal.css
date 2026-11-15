@@ -614,7 +614,7 @@ header .hero-topics a:hover, header .hero-topics a:focus {
 }
 @media only screen and (max-width: 767px) {
    /* one swipeable line on phones */
-   header .hero-topics { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; padding: 0 20px; }
+   header .hero-topics { flex-wrap: nowrap; justify-content: safe center; overflow-x: auto; scrollbar-width: none; padding: 0 20px; }
    header .hero-topics::-webkit-scrollbar { display: none; }
    header .hero-topics a { flex-shrink: 0; }
 }
