@@ -1649,3 +1649,12 @@ header .banner-text h3 { text-wrap: balance; }
 }
 #about h2.bio-kicker:before { content: ""; width: 32px; height: 2px; background: #11ABB0; }
 @media only screen and (min-width: 768px) { #about h2.bio-kicker { margin-left: 26px; } }
+
+/* welcome headline: serif, matching the Bio lead */
+header .banner-text h1 {
+   font-family: 'librebaskerville-regular', Georgia, serif !important;
+   font-weight: normal;
+   letter-spacing: 0;
+   line-height: 1.2em;
+   margin-bottom: 16px;
+}
