@@ -9,8 +9,8 @@ layout: journal
 
 	<div class="w-post-head">
 		<p class="w-meta">
-			{% for t in page.tags %}<a class="w-tag" href="/journal/#{{ t }}">{{ site.journal_tags[t] | default: t }}</a>{% endfor %}
 			<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+			{% for t in page.tags %}<a class="w-tag" href="/journal/#{{ t }}">{{ site.journal_tags[t] | default: t }}</a>{% endfor %}
 			<span class="w-dot" aria-hidden="true">&middot;</span>
 			<span>{{ minutes }} min read</span>
 		</p>
