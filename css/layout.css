@@ -1601,3 +1601,33 @@ h1.section-title, #about h1.section-title { margin-bottom: 48px; }
    #about .bio-text.bio-columns > p:first-child { -webkit-hyphens: manual; hyphens: manual; }
    #about .bio-text.bio-columns > p:last-child { margin-bottom: 0; }
 }
+
+/* ------------------------------------------------------------------ */
+/* Welcome with journal cards: stacked layout, never overlaps.
+/* Text is centred in the space above the cards; on short screens the
+/* header grows taller instead of letting things collide.
+/* ------------------------------------------------------------------ */
+header#home.has-latest {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: auto !important;
+}
+header#home.has-latest:before { display: none; }
+header#home.has-latest .banner {
+   flex: 1 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 80px 0 28px !important;
+}
+header#home.has-latest .hero-latest-wrap {
+   position: relative;
+   left: auto; right: auto; bottom: auto !important;
+   width: 100%;
+   margin-bottom: calc(110px + var(--hero-fade));
+}
+@media only screen and (max-width: 767px) {
+   header#home.has-latest .banner { padding: 72px 0 24px !important; }
+   header#home.has-latest .hero-latest-wrap { margin-bottom: calc(56px + var(--hero-fade)); }
+}

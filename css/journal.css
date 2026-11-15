@@ -522,9 +522,6 @@ header .hero-card-text {
    header .hero-card-text { -webkit-line-clamp: 1; }
    header .hero-card-cover { width: 48px; height: 72px; }
 }
-@media only screen and (max-height: 640px) {
-   header .hero-latest-wrap { display: none; }
-}
 @media (prefers-reduced-motion: reduce) {
    header .hero-track .hero-card { transition: none; }
 }

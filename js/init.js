@@ -71,7 +71,8 @@
    // one screen of photo, plus the fade strip that sits below the fold
    function sizeHeader() {
       var fade = parseInt(getComputedStyle(document.getElementById('home')).getPropertyValue('--hero-fade'), 10) || 0;
-      $('header').css({ 'height': $(window).height() + fade });
+      // min-height (not height) so the content can make it taller on short screens
+      $('header').css({ 'min-height': $(window).height() + fade });
    }
    sizeHeader();
    $(window).on('resize', sizeHeader);
