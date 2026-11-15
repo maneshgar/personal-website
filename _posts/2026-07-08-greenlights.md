@@ -1,6 +1,5 @@
 ---
 title: "Greenlights"
-date: 2026-11-13 12:00:00 -0800
 tags: [books]
 description: "Matthew McConaughey's memoir about life's red lights, yellow lights and greenlights."
 book_title: "Greenlights"

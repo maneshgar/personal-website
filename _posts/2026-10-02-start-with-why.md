@@ -1,6 +1,5 @@
 ---
 title: "Start with Why"
-date: 2026-11-13 18:00:00 -0800
 tags: [books]
 description: "Why getting the purpose right from the start matters more than any amount of data, motivation or competition."
 book_title: "Start with Why: How Great Leaders Inspire Everyone to Take Action"
