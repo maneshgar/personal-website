@@ -1534,7 +1534,7 @@ h1.section-title, #about h1.section-title { margin-bottom: 48px; }
    ul#nav li a { font-size: 12px; letter-spacing: 2px; margin: 14px 0; }
    ul#nav li.current a { color: #11ABB0; }
    /* Bio: justified text leaves big gaps on narrow screens */
-   #about .bio-text p { text-align: left; -webkit-hyphens: manual; hyphens: manual; }
+   #about .bio-text p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 }
 
 /* Links on phones: an even 4-column grid, captions capped at two lines */
