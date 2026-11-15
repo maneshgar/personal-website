@@ -120,13 +120,17 @@
 	<nav class="hero-topics" aria-label="Journal topics">{% for t in site.journal_tags %}{% assign key = t[0] %}{% assign tagged = site.tags[key] %}{% if tagged and tagged.size > 0 and key != 'projects' %}<a href="/journal/#{{ key }}">{{ t[1] }}</a>{% endif %}{% endfor %}</nav>
 	<div class="hero-latest" aria-label="Latest journal posts">
 		<div class="hero-track">
-			{% for post in site.posts limit: 20 %}
+			{% comment %} highlighted posts first, then the rest by date {% endcomment %}
+			{% assign highlighted = site.posts | where: "highlight", true %}
+			{% assign others = site.posts | where_exp: "p", "p.highlight != true" %}
+			{% assign ordered = highlighted | concat: others %}
+			{% for post in ordered limit: 20 %}
 			{% assign thumb = post.cover | default: post.image %}
 			{% assign is_news = false %}{% if post.tags contains 'news' %}{% assign is_news = true %}{% endif %}
 			<a class="hero-card{% if thumb or is_news or post.tags contains 'projects' or post.tags contains 'finance' %} has-cover{% endif %}" href="{{ post.url }}">
 				{% if thumb %}<img class="hero-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif is_news %}<span class="hero-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="hero-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% elsif post.tags contains 'finance' %}<span class="hero-card-cover is-square is-icon is-finance">{% include finance-icon.svg %}</span>{% endif %}
 				<span class="hero-card-body">
-					<span class="hero-card-meta">{{ post.date | date: '%b %-d, %Y' }}{% for t in post.tags limit: 1 %} &middot; {{ site.journal_tags[t] | default: t }}{% endfor %}</span>
+					<span class="hero-card-meta">{% if post.highlight %}<span class="hero-star" aria-label="Highlight">&#9733;</span> {% endif %}{{ post.date | date: '%b %-d, %Y' }}{% for t in post.tags limit: 1 %} &middot; {{ site.journal_tags[t] | default: t }}{% endfor %}</span>
 					<span class="hero-card-title">{{ post.title }}</span>
 					{% if post.book_author %}<span class="hero-card-book">{{ post.book_title | default: post.title }} &mdash; {{ post.book_author }}{% if post.rating %} <span class="hero-card-stars" aria-label="{{ post.rating }} out of 5">{% for i in (1..5) %}{% if i <= post.rating %}&#9733;{% else %}&#9734;{% endif %}{% endfor %}</span>{% endif %}</span>{% endif %}
 					<span class="hero-card-text">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 160 }}</span>

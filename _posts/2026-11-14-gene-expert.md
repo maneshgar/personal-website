@@ -1,6 +1,7 @@
 ---
 title: "GeneExpert"
 tags: [projects, ai]
+highlight: true
 description: "A foundation model for bulk RNA-Seq gene expression data. More to come once it's published."
 image: /images/journal/geneexpert.png
 project_logo: /images/journal/geneexpert-logo.png

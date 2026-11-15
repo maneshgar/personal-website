@@ -2,6 +2,7 @@
 title: "Lower the Risk, Then Raise It"
 date: 2026-11-14 21:00:00 -0800
 tags: [finance]
+highlight: true
 description: "My favourite investing strategy for beginners and long-term investors: simplify with an index, then add the performance back with leverage."
 ---
 

@@ -663,3 +663,16 @@ header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg,
 /* one consistent body style: no larger/darker first paragraph */
 .w-body > p:first-child { font-size: inherit !important; line-height: inherit !important; color: inherit !important; }
 html.theme-dark .w-body > p:first-child { color: inherit !important; }
+
+/* screenshots in posts: a soft frame */
+.w-body img { border: 1px solid #E3EAEA; box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+html.theme-dark .w-body img { border-color: #2E3841; }
+
+/* smaller, centred screenshot */
+.w-body img.w-shot-small { display: block; width: 60%; margin-left: auto; margin-right: auto; }
+@media only screen and (max-width: 600px) { .w-body img.w-shot-small { width: 100%; } }
+
+/* highlighted posts */
+header .hero-star { color: #F5C451; }
+.w-tag.w-highlight { background: #FFF4D6; color: #9A6B00; }
+html.theme-dark .w-tag.w-highlight { background: rgba(245, 196, 81, .16) !important; color: #F5C451 !important; }

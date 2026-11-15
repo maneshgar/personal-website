@@ -24,6 +24,7 @@ post's date; the short title becomes its web address
 title: "Your Title"
 tags: [news]           # news, ai, projects, books, finance or notes (or several: [books, finance])
 description: "One sentence for the post list and link previews."
+highlight: true        # optional: pin to the front of the welcome cards
 
 # News posts that point to another page (optional; shows a link card):
 link: https://example.com/the-article

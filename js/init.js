@@ -200,7 +200,8 @@
       function layout() {
          var w = $(window).width();
          perPage = w >= 1320 ? 3 : (w >= 880 ? 2 : 1);
-         pages = Math.ceil($cards.length / perPage);
+         // at most 5 rotations, using only the most recent posts
+         pages = Math.min(5, Math.ceil($cards.length / perPage));
          if (page >= pages) page = 0;
          $cards.addClass('is-hidden').removeClass('is-leaving is-arriving');
          pageCards(page).removeClass('is-hidden');
