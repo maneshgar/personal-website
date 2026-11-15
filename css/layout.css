@@ -1670,3 +1670,29 @@ header .banner-text h1 {
 header .banner .banner-text h1.responsive-headline {
    font-size: clamp(30px, 5.3vw, 46px) !important;
 }
+
+/* QR codes to the right of the contact form (desktop only) */
+.contact-qr { display: none; }
+@media only screen and (min-width: 900px) {
+   body #contact .row.contact-row {
+      max-width: 960px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 122px;
+      gap: 0 48px;
+      align-items: start;
+   }
+   body #contact .row.contact-row:before, body #contact .row.contact-row:after { content: none; }
+   body #contact .row.contact-row > .columns { width: auto; float: none; padding: 0; }
+   body #contact .row.section-head { max-width: 960px; }
+   body #contact .row.section-head > .columns { padding: 0; }
+   .contact-qr { display: flex; flex-direction: column; gap: 15px; padding-top: 28px; align-self: start; }
+   .contact-qr img {
+      display: block;
+      width: 122px;
+      height: auto;
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #E3EAEA;
+   }
+   html.theme-dark .contact-qr img { border-color: #2E3841; }
+}
