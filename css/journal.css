@@ -633,3 +633,29 @@ html.theme-dark .w-body td:first-child { color: #EEF2F4; }
 /* finance: rising chart on a green-to-teal tile */
 .is-icon.is-finance { background: linear-gradient(135deg, #3BC97A 0%, #1FB39A 50%, #11ABB0 100%); box-shadow: 0 6px 16px rgba(31, 179, 154, .32), inset 0 1px 0 rgba(255, 255, 255, .35); }
 header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg, rgba(59, 201, 122, .85) 0%, rgba(31, 179, 154, .85) 50%, rgba(17, 171, 176, .85) 100%); }
+
+/* Journal posts in the Baskerville serif (matches the welcome headline and Bio) */
+.w-post-head h1 {
+   font-family: 'librebaskerville-regular', Georgia, serif;
+   font-weight: normal;
+   font-size: 30px;
+   line-height: 40px;
+   letter-spacing: 0;
+}
+.w-body, .w-body p, .w-body li {
+   font-family: 'librebaskerville-regular', Georgia, serif;
+   font-size: 16px;
+   line-height: 1.9;
+}
+.w-body > p:first-child { font-size: 17px; }
+.w-body h2, .w-body h3, .w-book-title {
+   font-family: 'librebaskerville-regular', Georgia, serif;
+   font-weight: normal;
+}
+.w-body strong, .w-body b { font-family: 'librebaskerville-bold', Georgia, serif; font-weight: normal; }
+.w-body em, .w-body i { font-family: 'librebaskerville-italic', Georgia, serif; font-style: normal; }
+.w-body table, .w-body td, .w-body th { font-family: 'opensans-regular', sans-serif; }
+@media only screen and (max-width: 600px) {
+   .w-post-head h1 { font-size: 24px; line-height: 32px; }
+   .w-body, .w-body p, .w-body li, .w-body > p:first-child { font-size: 15px; line-height: 1.85; }
+}
