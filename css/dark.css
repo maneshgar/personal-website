@@ -157,3 +157,55 @@ ul#nav li.nav-theme { display: inline-flex; align-items: center; height: auto; }
    ul#nav li.nav-theme { display: block; padding: 10px 4%; }
    ul#nav li.nav-theme .theme-toggle { margin: 0; }
 }
+
+
+
+
+/* welcome photo tint: a separate layer that fades in for dark mode */
+header#home .hero-tint {
+   position: absolute;
+   inset: 0;
+   z-index: 0;
+   pointer-events: none;
+   background: linear-gradient(to bottom, rgba(22, 27, 32, .30) 0%, rgba(22, 27, 32, .42) 55%, rgba(22, 27, 32, .78) 100%);
+   opacity: 0;
+   transition: opacity .6s ease;
+}
+html.theme-dark header#home .hero-tint { opacity: 1; }
+header#home .banner { position: relative; z-index: 1; }
+header#home .hero-latest-wrap { position: relative; z-index: 2; }
+
+/* smooth switch between day and night: colours fade (the welcome area is left alone) */
+html.theme-switching body *:not(header):not(header *),
+html.theme-switching body *:not(header):not(header *):before,
+html.theme-switching body *:not(header):not(header *):after {
+   transition: background-color .6s ease, color .6s ease, border-color .6s ease !important;
+}
+html.theme-switching body,
+html.theme-switching header:after { transition: background-color .6s ease !important; }
+@media (prefers-reduced-motion: reduce) { header#home .hero-tint { transition: none; } }
+
+
+/* day mode: birds on wires, cross-fading with the night photo */
+header#home .hero-day {
+   position: absolute;
+   inset: 0;
+   z-index: 0;
+   pointer-events: none;
+   background:
+      linear-gradient(to bottom, rgba(20, 30, 48, .34) 0%, rgba(20, 30, 48, .24) 45%, rgba(20, 30, 48, .28) 100%),
+      url(../images/header-day.jpg) center top / 100% auto no-repeat,
+      #99B1D2;
+   opacity: 1;
+   transition: opacity .6s ease;
+}
+html.theme-dark header#home .hero-day { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { header#home .hero-day { transition: none; } }
+
+/* show the whole day photo on wide screens (no zoom); phones still need to fill */
+@media only screen and (max-width: 900px) {
+   header#home .hero-day {
+      background-size: auto, cover;
+      background-position: 0 0, center center;
+   }
+}

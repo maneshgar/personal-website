@@ -15,8 +15,12 @@
     if (!btn) return;
     e.preventDefault();
     var dark = !root.classList.contains('theme-dark');
-    apply(dark);
     try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (err) {}
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { apply(dark); return; }
+    root.classList.add('theme-switching');
+    apply(dark);
+    setTimeout(function () { root.classList.remove('theme-switching'); }, 700);
   });
 })();
 </script>
