@@ -128,7 +128,7 @@
 			{% assign thumb = post.cover | default: post.image %}
 			{% assign is_news = false %}{% if post.tags contains 'news' %}{% assign is_news = true %}{% endif %}
 			<a class="hero-card{% if thumb or is_news or post.tags contains 'projects' or post.tags contains 'finance' %} has-cover{% endif %}" href="{{ post.url }}">
-				{% if thumb %}<img class="hero-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif is_news %}<span class="hero-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="hero-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% elsif post.tags contains 'finance' %}<span class="hero-card-cover is-square is-icon is-finance">{% include finance-icon.svg %}</span>{% endif %}
+				{% if thumb %}<img class="hero-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif is_news %}<span class="hero-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="hero-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% elsif post.tags contains 'finance' %}<img class="hero-card-cover is-square" src="/images/journal/finance-default.jpg" alt="" loading="lazy">{% endif %}
 				<span class="hero-card-body">
 					<span class="hero-card-meta">{% if post.highlight %}<span class="hero-star" aria-label="Highlight">&#9733;</span> {% endif %}{{ post.date | date: '%b %-d, %Y' }}{% for t in post.tags limit: 1 %} &middot; {{ site.journal_tags[t] | default: t }}{% endfor %}</span>
 					<span class="hero-card-title">{{ post.title }}</span>
