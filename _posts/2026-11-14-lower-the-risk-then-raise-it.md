@@ -5,32 +5,22 @@ tags: [finance]
 description: "My favourite investing strategy for beginners and long-term investors: simplify with an index, then add the performance back with leverage."
 ---
 
-If you're new to investing, or in it for the long run, here's the strategy I
-think works best: **lower the risk first, then increase it.**
+When people ask me how to start investing, or how to invest for the long run, my
+answer has become surprisingly simple: lower the risk first, then raise it.
 
-## Step 1: Lower the risk
+We always hear that the way to lower risk is to diversify, and that's true. The
+easiest way to do it is to buy an **index**, like the S&P 500 or the
+Nasdaq-100, instead of picking individual stocks. With an index, you don't need
+to study companies, read their financial statements or understand their
+products. You simply get the average of the market, and you stop worrying about
+everything else. What used to be a hundred questions shrinks down to just one:
+is the market in a good place right now, or a bad one? If it looks good, you
+buy. If it looks bad and risky, you sell.
 
-We always hear that we should lower our risk by diversifying. It's true, and we
-should do it. So what's the best way to diversify? Buy an **index**, like the
-S&P 500, the Nasdaq-100 or one of many others.
-
-Investing in an index has a lot of advantages. You don't need to study
-individual companies, read their financials or understand their products. You
-simply get the average of the market. That's it, no need to overthink it.
-
-All you really need to know is whether the market is in a good or a bad place,
-which turns investing into one very simple question:
-
-- If it looks **bad and risky**, sell.
-- If it looks **good**, buy.
-
-## Step 2: Raise it back up
-
-Of course, a good investor wants to beat the index and earn more than the
-average. That part is easy too: buy a **leveraged** version of the index.
-
-Here are some common indexes, with a regular fund that tracks each one and
-popular 2x and 3x leveraged "bull" funds:
+Of course, a good investor wants more than the average, and this is where the
+second half comes in. Once you've made things simple, you can raise the risk
+back up with a **leveraged** version of the same index, a fund designed to move
+two or three times as much as the index each day. Here are some common ones:
 
 | Index | Regular | 2x bull | 3x bull |
 |---|---|---|---|
@@ -39,20 +29,18 @@ popular 2x and 3x leveraged "bull" funds:
 | Dow Jones | DIA | DDM | UDOW |
 | Russell 2000 | IWM | UWM | TNA |
 
-Think about what just happened. In step 1, you removed a lot of variables from
-the equation, and gave up some performance in exchange. In step 2, you used
-leverage to bring that performance back. In the end, you've simply **simplified
-the equation**: fewer things to get right, with returns that can still compete.
+What I like about this approach is what it does to the problem. By buying the
+index, you removed most of the variables from the equation and gave up some
+performance in return. With leverage, you take that performance back. You end
+up with a much simpler equation, fewer things to get right, and returns that can
+still compete.
 
-## Staying in, or getting out
-
-From there, the only decision left is timing at a high level. If it's a good
-time to be in the market, stay in. If something starts to smell off, sell, step
-out, and put your money into something else until things look better.
-
-Just be aware that leveraged funds can lose value in choppy, sideways markets,
-even when the index itself ends up flat, and they fall much harder in a
-downturn. That's exactly why this last part, knowing when to get out, matters
-so much.
+From there, the only real decision left is timing at a high level. When it feels
+like a good time to be in the market, you stay in. When something starts to
+smell off, you step out and put your money somewhere else until things look
+better. That last part matters more than anything, because leveraged funds can
+lose value in choppy, sideways markets, even when the index itself ends up flat,
+and they fall much harder in a downturn. Knowing when to get out is what keeps
+the strategy working.
 
 *This is my personal view, not financial advice.*
