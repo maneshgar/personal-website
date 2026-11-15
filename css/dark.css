@@ -194,7 +194,7 @@ header#home .hero-day {
    pointer-events: none;
    background:
       linear-gradient(to bottom, rgba(16, 26, 30, .38) 0%, rgba(16, 26, 30, .28) 45%, rgba(16, 26, 30, .30) 100%),
-      url(../images/header-day.jpg) center -12vh / 100% auto no-repeat,
+      url(../images/header-day.jpg) center top / 100% auto no-repeat,
       #475352;
    opacity: 1;
    transition: opacity .6s ease;
@@ -205,7 +205,7 @@ html.theme-dark header#home .hero-day { opacity: 0; }
 /* show the whole day photo on wide screens (no zoom); phones still need to fill */
 @media only screen and (max-width: 900px) {
    header#home .hero-day {
-      background-size: auto, auto 112%;
-      background-position: 0 0, 58% 75%;
+      background-size: auto, cover;
+      background-position: 0 0, 58% top;
    }
 }
