@@ -195,11 +195,11 @@ a.w-tag:hover { background: #11ABB0; color: #fff; }
 .w-rating { color: #F0A500; font-size: 15px; margin-top: 6px !important; letter-spacing: 2px; }
 
 .w-body {
-   font: 18px/32px 'opensans-regular', sans-serif;
+   font: 17px/30px 'opensans-regular', sans-serif;
    color: #2F3539;
 }
 .w-body p { margin-bottom: 22px; }
-.w-body > p:first-child { font-size: 19px; line-height: 33px; color: #22272B; }
+.w-body > p:first-child { font-size: 18px; line-height: 31px; color: #22272B; }
 .w-body strong, .w-body b { font-family: 'opensans-bold', sans-serif; font-weight: normal; font-size: inherit; line-height: inherit; color: #22272B; }
 .w-body em, .w-body i { font-family: inherit; font-style: italic; font-size: inherit; line-height: inherit; }
 .w-body h2 { font: 24px/32px 'opensans-bold', sans-serif; color: #22272B; margin: 40px 0 12px; }
@@ -304,8 +304,8 @@ a.w-tag:hover { background: #11ABB0; color: #fff; }
 @media only screen and (max-width: 600px) {
    .w-post-head h1 { font-size: 24px; line-height: 32px; }
    .w-dek { font-size: 17px; line-height: 28px; }
-   .w-body { font-size: 17px; line-height: 30px; }
-   .w-body > p:first-child { font-size: 17px; line-height: 30px; }
+   .w-body { font-size: 16px; line-height: 28px; }
+   .w-body > p:first-child { font-size: 16px; line-height: 28px; }
    .w-linkcard { flex-wrap: wrap; padding: 16px 18px; }
    .w-linkcard-text { flex: 1 1 calc(100% - 62px); }
    .w-linkcard-cta { margin-left: 62px; }
@@ -559,7 +559,7 @@ header .hero-card-cover.is-icon {
 .w-card-cover.is-icon { border-radius: 14px; }
 
 /* list items in posts use the body line height (the template's li default is tight) */
-.w-body li { font-size: inherit; line-height: 30px; margin-bottom: 10px; }
+.w-body li { font-size: inherit; line-height: 29px; margin-bottom: 10px; }
 
 /* responsive 16:9 video embed in posts */
 .w-video {
@@ -617,3 +617,6 @@ header .hero-topics a:hover, header .hero-topics a:focus {
 }
 .w-book.w-project img.w-project-logo { flex-shrink: 0; width: 200px; max-width: 40%; height: auto; border-radius: 8px; box-shadow: none; }
 @media only screen and (max-width: 600px) { .w-project { flex-wrap: wrap; } .w-book.w-project img.w-project-logo { max-width: 100%; width: 220px; } }
+
+/* post body text: justified on both edges, with hyphenation to avoid big gaps */
+.w-body p, .w-body li { text-align: justify; -webkit-hyphens: auto; hyphens: auto; }

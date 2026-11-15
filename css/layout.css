@@ -1631,3 +1631,21 @@ header#home.has-latest .hero-latest-wrap {
    header#home.has-latest .banner { padding: 72px 0 24px !important; }
    header#home.has-latest .hero-latest-wrap { margin-bottom: calc(56px + var(--hero-fade)); }
 }
+
+/* welcome subtitle: even line breaks; manual break only on wide screens */
+header .banner-text h3 { text-wrap: balance; }
+@media only screen and (max-width: 767px) { header .banner-text h3 .hero-br { display: none; } }
+
+/* Bio: small magazine-style kicker instead of a section title */
+#about h2.bio-kicker {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   font: 12px/18px 'opensans-bold', sans-serif;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   color: #0B7F83;
+   margin: 0 0 18px;
+}
+#about h2.bio-kicker:before { content: ""; width: 32px; height: 2px; background: #11ABB0; }
+@media only screen and (min-width: 768px) { #about h2.bio-kicker { margin-left: 26px; } }
