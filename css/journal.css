@@ -620,3 +620,16 @@ header .hero-topics a:hover, header .hero-topics a:focus {
 
 /* post body text: justified on both edges, with hyphenation to avoid big gaps */
 .w-body p, .w-body li { text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+
+/* tables in posts */
+.w-body table { width: 100%; border-collapse: collapse; margin: 6px 0 26px; font-size: 15px; line-height: 22px; }
+.w-body th, .w-body td { text-align: left; padding: 10px 14px; border-bottom: 1px solid #E3EAEA; }
+.w-body th { font: 12px/18px 'opensans-bold', sans-serif; letter-spacing: 1px; text-transform: uppercase; color: #6E7881; border-bottom-width: 2px; }
+.w-body td:first-child { font-family: 'opensans-semibold', 'opensans-bold', sans-serif; color: #22272B; }
+html.theme-dark .w-body th, html.theme-dark .w-body td { border-color: #2E3841; }
+html.theme-dark .w-body td:first-child { color: #EEF2F4; }
+@media only screen and (max-width: 600px) { .w-body table { font-size: 13px; } .w-body th, .w-body td { padding: 8px 6px; } }
+
+/* finance: rising chart on a green-to-teal tile */
+.is-icon.is-finance { background: linear-gradient(135deg, #3BC97A 0%, #1FB39A 50%, #11ABB0 100%); box-shadow: 0 6px 16px rgba(31, 179, 154, .32), inset 0 1px 0 rgba(255, 255, 255, .35); }
+header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg, rgba(59, 201, 122, .85) 0%, rgba(31, 179, 154, .85) 50%, rgba(17, 171, 176, .85) 100%); }

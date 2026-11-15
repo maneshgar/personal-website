@@ -22,7 +22,7 @@ description: News, projects, books I've read, finance, and notes on what I've le
 		<li class="w-card" data-tags="{{ post.tags | join: ' ' }}">
 			<a href="{{ post.url }}">
 				{% assign thumb = post.cover | default: post.image %}
-				{% if thumb %}<img class="w-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif post.tags contains 'news' %}<span class="w-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="w-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% endif %}
+				{% if thumb %}<img class="w-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif post.tags contains 'news' %}<span class="w-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="w-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% elsif post.tags contains 'finance' %}<span class="w-card-cover is-square is-icon is-finance">{% include finance-icon.svg %}</span>{% endif %}
 				<div class="w-card-text">
 					<p class="w-meta">
 						<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>

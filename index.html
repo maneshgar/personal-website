@@ -46,10 +46,10 @@
 								
 	<!-- Favicons
 								 ================================================== -->
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-v2.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16-v2.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="/icon-192-v2.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-v2.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 									
 	<script type="application/ld+json">
 	{
@@ -102,7 +102,7 @@
 	<div class="row banner">
 		<div class="banner-text">
 			<h1 class="responsive-headline">Hi, I&rsquo;m Ben.</h1>
-			<h3>a PhD researcher at UBC, building AI models<br class="hero-br"> to understand gene expression and human health.</h3>
+			<h3>a PhD researcher at UBC, building AI models<br class="hero-br"> to understand gene expression and human biology.</h3>
 			<hr />
 			<ul class="social">
 				<li><a href="https://ca.linkedin.com/in/bmaneshgar" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
@@ -120,8 +120,8 @@
 			{% for post in site.posts limit: 20 %}
 			{% assign thumb = post.cover | default: post.image %}
 			{% assign is_news = false %}{% if post.tags contains 'news' %}{% assign is_news = true %}{% endif %}
-			<a class="hero-card{% if thumb or is_news or post.tags contains 'projects' %} has-cover{% endif %}" href="{{ post.url }}">
-				{% if thumb %}<img class="hero-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif is_news %}<span class="hero-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="hero-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% endif %}
+			<a class="hero-card{% if thumb or is_news or post.tags contains 'projects' or post.tags contains 'finance' %} has-cover{% endif %}" href="{{ post.url }}">
+				{% if thumb %}<img class="hero-card-cover{% unless post.cover %} is-square{% endunless %}" src="{{ thumb }}" alt="" loading="lazy">{% elsif is_news %}<span class="hero-card-cover is-square is-icon">{% include news-icon.svg %}</span>{% elsif post.tags contains 'projects' %}<span class="hero-card-cover is-square is-icon is-project">{% include project-icon.svg %}</span>{% elsif post.tags contains 'finance' %}<span class="hero-card-cover is-square is-icon is-finance">{% include finance-icon.svg %}</span>{% endif %}
 				<span class="hero-card-body">
 					<span class="hero-card-meta">{{ post.date | date: '%b %-d, %Y' }}{% for t in post.tags limit: 1 %} &middot; {{ site.journal_tags[t] | default: t }}{% endfor %}</span>
 					<span class="hero-card-title">{{ post.title }}</span>
