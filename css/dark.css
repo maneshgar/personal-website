@@ -125,7 +125,7 @@ html.theme-dark .w-body a, html.theme-dark .w-body a:visited,
 html.theme-dark .w-post-nav a, html.theme-dark .w-crumb:hover { color: var(--accent); }
 html.theme-dark .w-body code, html.theme-dark .w-body pre { background: var(--surface-2); }
 html.theme-dark .w-linkcard-icon { background: var(--accent-soft); color: var(--accent); }
-html.theme-dark .w-topbar { background: #0F1317; }
+html.theme-dark .w-topbar { background: rgba(22, 27, 32, .9); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, .07); }
 
 /* the moon / sun button */
 .theme-toggle {
@@ -169,7 +169,6 @@ header#home .hero-tint {
    pointer-events: none;
    background: linear-gradient(to bottom, rgba(22, 27, 32, .30) 0%, rgba(22, 27, 32, .42) 55%, rgba(22, 27, 32, .78) 100%);
    opacity: 0;
-   transition: opacity .6s ease;
 }
 html.theme-dark header#home .hero-tint { opacity: 1; }
 header#home .banner { position: relative; z-index: 1; }
@@ -194,7 +193,7 @@ header#home .hero-day {
    pointer-events: none;
    background:
       linear-gradient(to bottom, rgba(16, 26, 30, .38) 0%, rgba(16, 26, 30, .28) 45%, rgba(16, 26, 30, .30) 100%),
-      url(../images/header-day.jpg) center top / 100% auto no-repeat,
+      url(../images/header-day.jpg) center top / cover no-repeat,
       #475352;
    opacity: 1;
    transition: opacity .6s ease;
@@ -202,10 +201,39 @@ header#home .hero-day {
 html.theme-dark header#home .hero-day { opacity: 0; }
 @media (prefers-reduced-motion: reduce) { header#home .hero-day { transition: none; } }
 
-/* show the whole day photo on wide screens (no zoom); phones still need to fill */
+/* phones: shift the day photo slightly right so the pines show */
 @media only screen and (max-width: 900px) {
    header#home .hero-day {
       background-size: auto, cover;
       background-position: 0 0, 58% top;
    }
+}
+
+/* dark mode: the home page menu bar (once scrolled) uses the same bluish ribbon */
+html.theme-dark #nav-wrap.opaque { background-color: rgba(22, 27, 32, .9) !important; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, .07); }
+
+/* 5. phone menu button: a slim glass circle with three fine lines */
+@media only screen and (max-width: 767px) {
+   #nav-wrap > a {
+      width: 42px !important;
+      height: 42px !important;
+      border-radius: 50% !important;
+      background: rgba(16, 22, 28, .32) !important;
+      border: 1px solid rgba(255, 255, 255, .38) !important;
+      box-shadow: none !important;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+   }
+   #nav-wrap > a:before {
+      border: 0 !important;
+      height: 1.5px;
+      left: 13px !important;
+      right: 13px !important;
+      top: 50% !important;
+      margin-top: -1px;
+      background: #fff;
+      border-radius: 1px;
+      box-shadow: 0 -5px 0 #fff, 0 5px 0 #fff;
+   }
+   #nav-wrap > a:after { display: none !important; }
 }

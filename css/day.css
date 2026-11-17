@@ -1,0 +1,117 @@
+/* ------------------------------------------------------------------ */
+/* Day mode palette. Every rule is scoped to day mode, so dark mode
+/* (css/dark.css) is untouched.
+/*   page      #E9EEEF   surfaces (cards, fields)  #F6F9F9
+/*   lines     #D5DEE0   soft fills (pills, chips) #DCE5E7
+/* ------------------------------------------------------------------ */
+
+/* page background */
+html:not(.theme-dark) body,
+html:not(.theme-dark) body #about,
+html:not(.theme-dark) body #resume,
+html:not(.theme-dark) body #contact,
+html:not(.theme-dark) body footer,
+html:not(.theme-dark) body.journal-page { background: #E9EEEF !important; }
+
+/* the welcome photo fades into the same colour */
+html:not(.theme-dark) header:after {
+   background: linear-gradient(to bottom,
+      rgba(233, 238, 239, 0) 0%, rgba(233, 238, 239, .013) 8.1%, rgba(233, 238, 239, .049) 15.5%,
+      rgba(233, 238, 239, .104) 22.5%, rgba(233, 238, 239, .175) 29%, rgba(233, 238, 239, .259) 35.3%,
+      rgba(233, 238, 239, .352) 41.2%, rgba(233, 238, 239, .45) 47.1%, rgba(233, 238, 239, .55) 52.9%,
+      rgba(233, 238, 239, .648) 58.8%, rgba(233, 238, 239, .741) 64.7%, rgba(233, 238, 239, .825) 71%,
+      rgba(233, 238, 239, .896) 77.5%, rgba(233, 238, 239, .951) 84.5%, rgba(233, 238, 239, .987) 91.9%,
+      #E9EEEF 100%) !important;
+}
+
+/* section and list lines */
+html:not(.theme-dark) #resume,
+html:not(.theme-dark) #contact,
+html:not(.theme-dark) footer,
+html:not(.theme-dark) .education,
+html:not(.theme-dark) .work,
+html:not(.theme-dark) .w-post-head,
+html:not(.theme-dark) .w-post-nav,
+html:not(.theme-dark) .w-body hr { border-color: #D5DEE0 !important; }
+html:not(.theme-dark) #resume .award-list li { border-bottom-color: #CFD9DB !important; }
+html:not(.theme-dark) #about .bio-text.bio-columns { column-rule-color: #D0D9DB; }
+
+/* resume timeline: visible line, dots that sit on the page colour */
+html:not(.theme-dark) #resume .cv-entry { border-left-color: #CBD6D8; }
+html:not(.theme-dark) #resume .cv-entry:before { background: #E9EEEF; }
+html:not(.theme-dark) #resume .cv-entry:first-child:before { background: #11ABB0; }
+
+/* cards and fields: a soft off-white with a hairline, instead of stark white */
+html:not(.theme-dark) #resume .pub-list li,
+html:not(.theme-dark) .w-card a,
+html:not(.theme-dark) .w-book,
+html:not(.theme-dark) .w-linkcard,
+html:not(.theme-dark) .w-nav-card {
+   background: #F6F9F9 !important;
+   border-color: #D5DEE0 !important;
+}
+html:not(.theme-dark) .w-card a { box-shadow: 0 1px 2px rgba(20, 40, 45, .05); }
+html:not(.theme-dark) body #contact input,
+html:not(.theme-dark) body #contact textarea,
+html:not(.theme-dark) body #contact select {
+   background: #F6F9F9 !important;
+   border-color: #D0D9DB !important;
+}
+html:not(.theme-dark) body #contact input:focus,
+html:not(.theme-dark) body #contact textarea:focus { background: #fff !important; border-color: #11ABB0 !important; }
+html:not(.theme-dark) .contact-qr img { border-color: #D5DEE0; }
+
+/* pills and chips: visible against the page */
+html:not(.theme-dark) .w-filter { background: #DCE5E7; color: #2F3539; }
+html:not(.theme-dark) .w-filter:hover { background: #CFE7E8; color: #0B7F83; }
+html:not(.theme-dark) .w-filter.is-active { background: #11ABB0; color: #fff; }
+html:not(.theme-dark) .w-tag,
+html:not(.theme-dark) a.w-tag,
+html:not(.theme-dark) #resume .cv-date,
+html:not(.theme-dark) #resume .pub-toggle,
+html:not(.theme-dark) .w-linkcard-icon { background: #D6EBEC; color: #0A7378; }
+html:not(.theme-dark) .w-tag.w-highlight { background: #F5E7C4; color: #8A5E00; }
+
+/* text: a touch darker so it holds up on the darker page */
+html:not(.theme-dark) #about p,
+html:not(.theme-dark) .w-body,
+html:not(.theme-dark) .w-intro,
+html:not(.theme-dark) .w-excerpt,
+html:not(.theme-dark) #resume .desc,
+html:not(.theme-dark) #contact p.lead { color: #343B40; }
+html:not(.theme-dark) #resume .info,
+html:not(.theme-dark) .w-meta,
+html:not(.theme-dark) .w-crumb,
+html:not(.theme-dark) #resume .cv-subhead,
+html:not(.theme-dark) footer { color: #5F6A71; }
+
+/* code blocks no longer match the page colour */
+html:not(.theme-dark) .w-body code,
+html:not(.theme-dark) .w-body pre { background: #DCE5E7; }
+html:not(.theme-dark) .w-body th,
+html:not(.theme-dark) .w-body td { border-color: #D5DEE0; }
+
+/* menu bar: misty blue-grey taken from the welcome photo, with white text
+   (Journal pages, and the home page once scrolled past the photo) */
+html:not(.theme-dark) .w-topbar {
+   background: rgba(76, 92, 102, .9);
+   -webkit-backdrop-filter: blur(12px);
+   backdrop-filter: blur(12px);
+   border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+@media only screen and (min-width: 768px) {
+   html:not(.theme-dark) #nav-wrap.opaque {
+      background-color: rgba(76, 92, 102, .9) !important;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+   }
+}
+html:not(.theme-dark) .w-nav a.current,
+html:not(.theme-dark) .w-nav a:hover,
+html:not(.theme-dark) .w-brand:hover { color: #7FE3E6; }
+html:not(.theme-dark) .w-nav li.nav-page a { border-color: #7FE3E6; }
+@media only screen and (min-width: 768px) {
+   html:not(.theme-dark) #nav-wrap.opaque ul#nav li.current a,
+   html:not(.theme-dark) #nav-wrap.opaque ul#nav li a:hover { color: #7FE3E6; }
+}
