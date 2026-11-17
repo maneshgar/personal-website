@@ -125,7 +125,7 @@ html.theme-dark .w-body a, html.theme-dark .w-body a:visited,
 html.theme-dark .w-post-nav a, html.theme-dark .w-crumb:hover { color: var(--accent); }
 html.theme-dark .w-body code, html.theme-dark .w-body pre { background: var(--surface-2); }
 html.theme-dark .w-linkcard-icon { background: var(--accent-soft); color: var(--accent); }
-html.theme-dark .w-topbar { background: rgba(22, 27, 32, .9); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, .07); }
+html.theme-dark .w-topbar { background: #0F151C; border-bottom: 1px solid #1E2731; }
 
 /* the moon / sun button */
 .theme-toggle {
@@ -210,7 +210,7 @@ html.theme-dark header#home .hero-day { opacity: 0; }
 }
 
 /* dark mode: the home page menu bar (once scrolled) uses the same bluish ribbon */
-html.theme-dark #nav-wrap.opaque { background-color: rgba(22, 27, 32, .9) !important; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, .07); }
+html.theme-dark #nav-wrap.opaque { background-color: #0F151C !important; border-bottom: 1px solid #1E2731; }
 
 /* 5. phone menu button: a slim glass circle with three fine lines */
 @media only screen and (max-width: 767px) {
