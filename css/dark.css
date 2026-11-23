@@ -48,8 +48,7 @@ html.theme-dark #resume h3 a,
 html.theme-dark #resume .pub-title,
 html.theme-dark #resume .award-name,
 html.theme-dark h1.section-title,
-html.theme-dark #contact h1,
-html.theme-dark #portfolio h1 { color: var(--heading) !important; }
+html.theme-dark #contact h1 { color: var(--heading) !important; }
 html.theme-dark #resume .info,
 html.theme-dark #resume .pub-venue,
 html.theme-dark #resume .cv-subhead,
@@ -81,8 +80,7 @@ html.theme-dark #resume .links-row .portfolio-item .portfolio-item-meta h5 { col
 
 /* contact form */
 html.theme-dark body #contact input,
-html.theme-dark body #contact textarea,
-html.theme-dark body #contact select { background: var(--surface) !important; color: var(--heading) !important; border-color: var(--border) !important; }
+html.theme-dark body #contact textarea { background: var(--surface) !important; color: var(--heading) !important; border-color: var(--border) !important; }
 html.theme-dark body #contact input:focus,
 html.theme-dark body #contact textarea:focus { border-color: var(--accent) !important; }
 
@@ -157,8 +155,6 @@ ul#nav li.nav-theme { display: inline-flex; align-items: center; height: auto; }
    ul#nav li.nav-theme { display: block; padding: 10px 4%; }
    ul#nav li.nav-theme .theme-toggle { margin: 0; }
 }
-
-
 
 
 /* welcome photo tint: a separate layer that fades in for dark mode */

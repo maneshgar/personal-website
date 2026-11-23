@@ -23,6 +23,7 @@ journal_tags:
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 feed:
   path: journal/feed.xml
@@ -39,4 +40,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
-  - inc

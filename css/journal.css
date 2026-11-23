@@ -707,3 +707,11 @@ html.theme-dark .w-body p.w-caption { color: #8D99A1 !important; }
 header .hero-card-cover.is-icon,
 header .hero-card-cover.is-icon.is-project,
 header .hero-card-cover.is-icon.is-finance { box-shadow: none !important; }
+
+/* 404 page */
+.w-notfound { text-align: center; padding: 40px 0 60px; }
+.w-notfound-code { font: 72px/1 'librebaskerville-regular', Georgia, serif; color: #11ABB0; margin: 0 0 12px; }
+.w-notfound h1 { font: 28px/36px 'librebaskerville-regular', Georgia, serif; color: #22272B; margin: 0 0 12px; }
+html.theme-dark .w-notfound h1 { color: #EEF2F4; }
+.w-notfound-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.w-notfound-links a { text-decoration: none; }

@@ -52,8 +52,7 @@ html:not(.theme-dark) .w-nav-card {
 }
 html:not(.theme-dark) .w-card a { box-shadow: 0 1px 2px rgba(20, 40, 45, .05); }
 html:not(.theme-dark) body #contact input,
-html:not(.theme-dark) body #contact textarea,
-html:not(.theme-dark) body #contact select {
+html:not(.theme-dark) body #contact textarea {
    background: #F6F9F9 !important;
    border-color: #D0D9DB !important;
 }

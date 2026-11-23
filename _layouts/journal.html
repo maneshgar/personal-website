@@ -42,7 +42,7 @@
 			<li><a href="/#about">Bio</a></li>
 			<li><a href="/#resume">Resume</a></li>
 			<li><a href="/#contact">Contact</a></li>
-			<li class="nav-page"><a href="/journal/" class="current">Journal</a></li>
+			<li class="nav-page"><a href="/journal/"{% if page.url contains '/journal/' %} class="current"{% endif %}>Journal</a></li>
 			<li class="nav-theme">{% include theme-toggle.html %}</li>
 		</ul>
 	</div>
