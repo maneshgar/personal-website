@@ -30,7 +30,6 @@ body.journal-page { background: #F4F7F7; }
 }
 .w-brand:hover { color: #11ABB0; }
 .w-nav { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0 22px; }
-.w-nav li { margin: 0; }
 .w-nav a, .w-nav a:visited {
    font: 11px/48px 'opensans-bold', sans-serif;
    letter-spacing: 2px;
@@ -200,8 +199,6 @@ a.w-tag:hover { background: #11ABB0; color: #fff; }
 }
 .w-body p { margin-bottom: 22px; }
 .w-body > p:first-child { font-size: 18px; line-height: 31px; color: #22272B; }
-.w-body strong, .w-body b { font-family: 'opensans-bold', sans-serif; font-weight: normal; font-size: inherit; line-height: inherit; color: #22272B; }
-.w-body em, .w-body i { font-family: inherit; font-style: italic; font-size: inherit; line-height: inherit; }
 .w-body h2 { font: 24px/32px 'opensans-bold', sans-serif; color: #22272B; margin: 40px 0 12px; }
 .w-body h3 { font: 19px/28px 'opensans-bold', sans-serif; color: #22272B; margin: 30px 0 10px; }
 .w-body a, .w-body a:visited { color: #0B7F83; border-bottom: 1px solid rgba(17,171,176,.35); }
@@ -217,7 +214,6 @@ a.w-tag:hover { background: #11ABB0; color: #fff; }
    color: #4A5156;
 }
 .w-body blockquote p { margin-bottom: 0; }
-.w-body img { max-width: 100%; height: auto; border-radius: 10px; margin: 8px 0 24px; }
 .w-body hr { border: 0; border-top: 1px solid #E3EAEA; margin: 36px 0; }
 .w-body code { font-size: 15px; background: #E9EFEF; padding: 2px 6px; border-radius: 4px; }
 .w-body pre { background: #E9EFEF; padding: 14px 16px; border-radius: 8px; overflow-x: auto; }
@@ -333,7 +329,11 @@ body.journal-page footer { padding: 20px 0; }
    border-radius: 15px;
    display: inline-block;
 }
-.w-nav li { display: flex; align-items: center; }
+.w-nav li {
+   margin: 0;
+   display: flex;
+   align-items: center;
+}
 
 /* latest journal posts: frosted glass cards drifting slowly right-to-left
    along the bottom of the welcome photo (loops over the 20 newest posts) */
@@ -494,15 +494,6 @@ header .hero-card-cover {
    flex-shrink: 0;
    box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
 }
-header .hero-card-book {
-   display: block;
-   font: 13px/19px 'librebaskerville-italic', serif;
-   color: rgba(255, 255, 255, .78);
-   margin-top: 2px;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
-}
 header .hero-card-stars { font-style: normal; color: #F5B82E; letter-spacing: 1px; }
 header .hero-card-text {
    display: -webkit-box;
@@ -574,7 +565,15 @@ header .hero-card-cover.is-icon {
 .w-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* the welcome cards skip the book line (it repeats the title); the post page shows it */
-header .hero-card-book { display: none; }
+header .hero-card-book {
+   font: 13px/19px 'librebaskerville-italic', serif;
+   color: rgba(255, 255, 255, .78);
+   margin-top: 2px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: none;
+}
 header .hero-card, header .hero-card:visited { align-items: center; }
 
 /* projects: layers icon on a teal-to-purple tile, and the project info card */
@@ -631,8 +630,6 @@ html.theme-dark .w-body td:first-child { color: #EEF2F4; }
 @media only screen and (max-width: 600px) { .w-body table { font-size: 13px; } .w-body th, .w-body td { padding: 8px 6px; } }
 
 /* finance: rising chart on a green-to-teal tile */
-.is-icon.is-finance { background: linear-gradient(135deg, #3BC97A 0%, #1FB39A 50%, #11ABB0 100%); box-shadow: 0 6px 16px rgba(31, 179, 154, .32), inset 0 1px 0 rgba(255, 255, 255, .35); }
-header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg, rgba(59, 201, 122, .85) 0%, rgba(31, 179, 154, .85) 50%, rgba(17, 171, 176, .85) 100%); }
 
 /* Journal posts in the Baskerville serif (matches the welcome headline and Bio) */
 .w-post-head h1 {
@@ -652,8 +649,19 @@ header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg,
    font-family: 'librebaskerville-regular', Georgia, serif;
    font-weight: normal;
 }
-.w-body strong, .w-body b { font-family: 'librebaskerville-bold', Georgia, serif; font-weight: normal; }
-.w-body em, .w-body i { font-family: 'librebaskerville-italic', Georgia, serif; font-style: normal; }
+.w-body strong, .w-body b {
+   font-size: inherit;
+   line-height: inherit;
+   color: #22272B;
+   font-family: 'librebaskerville-bold', Georgia, serif;
+   font-weight: normal;
+}
+.w-body em, .w-body i {
+   font-size: inherit;
+   line-height: inherit;
+   font-family: 'librebaskerville-italic', Georgia, serif;
+   font-style: normal;
+}
 .w-body table, .w-body td, .w-body th { font-family: 'opensans-regular', sans-serif; }
 @media only screen and (max-width: 600px) {
    .w-post-head h1 { font-size: 24px; line-height: 32px; }
@@ -665,7 +673,14 @@ header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg,
 html.theme-dark .w-body > p:first-child { color: inherit !important; }
 
 /* screenshots in posts: a soft frame */
-.w-body img { border: 1px solid #E3EAEA; box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+.w-body img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 10px;
+   margin: 8px 0 24px;
+   border: 1px solid #E3EAEA;
+   box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
 html.theme-dark .w-body img { border-color: #2E3841; }
 
 /* smaller, centred screenshot */
@@ -688,8 +703,13 @@ html.theme-dark .w-tag.w-highlight { background: rgba(245, 196, 81, .16) !import
 }
 
 /* finance tile: flat, site palette (teal to deep teal), white candlesticks */
-.is-icon.is-finance { background: linear-gradient(135deg, #1CC8C4 0%, #11ABB0 55%, #0B7F83 100%); box-shadow: 0 6px 16px rgba(17, 171, 176, .3); }
-header .hero-card-cover.is-icon.is-finance { background: linear-gradient(135deg, rgba(28, 200, 196, .85) 0%, rgba(17, 171, 176, .85) 55%, rgba(11, 127, 131, .85) 100%); }
+.is-icon.is-finance {
+   background: linear-gradient(135deg, #1CC8C4 0%, #11ABB0 55%, #0B7F83 100%);
+   box-shadow: 0 6px 16px rgba(17, 171, 176, .3);
+}
+header .hero-card-cover.is-icon.is-finance {
+   background: linear-gradient(135deg, rgba(28, 200, 196, .85) 0%, rgba(17, 171, 176, .85) 55%, rgba(11, 127, 131, .85) 100%);
+}
 .is-icon.is-finance svg { width: 70%; height: 70%; filter: none; }
 
 /* image captions */
