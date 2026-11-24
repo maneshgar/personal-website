@@ -11,17 +11,15 @@ description: News, projects, books I've read, finance, and notes on what I've le
 		<p class="w-intro">News, projects, books I&rsquo;ve read, finance, and notes on what I&rsquo;ve learned and found interesting.</p>
 
 		<div class="w-tools">
+			<div class="w-filters" role="group" aria-label="Filter by topic">
+				<button type="button" class="w-filter is-active" data-tag="all">All</button>
+				{% for t in site.journal_tags %}{% assign key = t[0] %}{% assign tagged = site.tags[key] %}{% if tagged and tagged.size > 0 %}<button type="button" class="w-filter" data-tag="{{ t[0] }}">{{ t[1] }}</button>{% endif %}{% endfor %}
+			</div>
 			<label class="w-search">
 				<span class="w-visually-hidden">Search the journal</span>
 				<i class="fa fa-search" aria-hidden="true"></i>
-				<input type="search" id="w-search" placeholder="Search posts" autocomplete="off" spellcheck="false">
+				<input type="search" id="w-search" placeholder="Search" autocomplete="off" spellcheck="false">
 			</label>
-			<a class="w-subscribe" href="/journal/subscribe/" title="Follow new posts in your feed reader"><i class="fa fa-rss" aria-hidden="true"></i> Subscribe</a>
-		</div>
-
-		<div class="w-filters" role="group" aria-label="Filter by topic">
-			<button type="button" class="w-filter is-active" data-tag="all">All</button>
-			{% for t in site.journal_tags %}{% assign key = t[0] %}{% assign tagged = site.tags[key] %}{% if tagged and tagged.size > 0 %}<button type="button" class="w-filter" data-tag="{{ t[0] }}">{{ t[1] }}</button>{% endif %}{% endfor %}
 		</div>
 	</div>
 

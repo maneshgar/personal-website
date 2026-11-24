@@ -131,7 +131,7 @@ html.theme-dark .w-sub-step { color: var(--muted); }
 html.theme-dark .w-sub-note a, html.theme-dark .w-sub-note a:visited { color: var(--accent); border-bottom-color: rgba(44, 196, 201, .35); }
 html.theme-dark .w-search input[type="search"]:focus { border-color: var(--accent) !important; }
 html.theme-dark .w-related-head { color: var(--heading); }
-html.theme-dark .w-subscribe, html.theme-dark .w-related-head a { color: var(--accent); }
+html.theme-dark .w-related-head a { color: var(--accent); }
 html.theme-dark .w-search .fa,
 html.theme-dark .w-search input::placeholder,
 html.theme-dark .w-updated,

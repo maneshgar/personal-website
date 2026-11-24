@@ -747,33 +747,28 @@ html.theme-dark .w-notfound h1 { color: #EEF2F4; }
 
 /* search and subscribe (journal list) */
 .w-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.w-tools { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.w-search { position: relative; flex: 0 1 340px; margin: 0; }
-.w-search .fa { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 13px; color: #8A949A; pointer-events: none; }
+.w-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 28px; }
+.w-tools .w-filters { margin-bottom: 0; }
+/* compact search on the right of the topics; widens while in use */
+.w-search { position: relative; margin: 0 0 0 auto; flex: none; }
+.w-search .fa { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); font-size: 12px; color: #8A949A; pointer-events: none; }
 .w-search input[type="search"] {
-   width: 100%;
+   width: 130px;
    margin: 0;
-   padding: 8px 14px 8px 36px;
-   font: 14px/20px 'opensans-regular', sans-serif;
+   padding: 5px 14px 5px 32px;
+   font: 13px/20px 'opensans-regular', sans-serif;
    color: #2F3539;
    background: #fff;
    border: 1px solid #E3EAEA;
-   border-radius: 18px;
+   border-radius: 16px;
    -webkit-appearance: none;
    appearance: none;
-   transition: border-color .2s ease;
+   transition: width .3s ease, border-color .2s ease;
 }
+.w-search input[type="search"]:focus,
+.w-search input[type="search"]:not(:placeholder-shown) { width: 260px; }
 .w-search input[type="search"]:focus { outline: none; border-color: #11ABB0; }
 .w-search input::placeholder { color: #8A949A; }
-.w-subscribe, .w-subscribe:visited {
-   margin-left: auto;
-   font: 13px/20px 'opensans-semibold', 'opensans-bold', sans-serif;
-   letter-spacing: .5px;
-   color: #0A7378;
-   white-space: nowrap;
-}
-.w-subscribe .fa { margin-right: 4px; }
-.w-subscribe:hover { color: #11ABB0; }
 
 /* share row (single post) */
 .w-share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 36px; }
@@ -831,9 +826,8 @@ html.theme-dark .w-notfound h1 { color: #EEF2F4; }
 .w-updated { color: #8A949A; }
 
 @media only screen and (max-width: 600px) {
-   .w-tools { flex-wrap: wrap; }
-   .w-search { flex: 1 1 100%; }
-   .w-subscribe { margin-left: 0; }
+   .w-search input[type="search"]:focus,
+   .w-search input[type="search"]:not(:placeholder-shown) { width: 200px; }
    .w-related-grid { grid-template-columns: 1fr; }
 }
 
