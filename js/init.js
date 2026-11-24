@@ -203,6 +203,7 @@
          // at most 5 rotations, using only the most recent posts
          pages = Math.min(5, Math.ceil($cards.length / perPage));
          if (page >= pages) page = 0;
+         $heroTrack.addClass('is-ready');
          $cards.addClass('is-hidden').removeClass('is-leaving is-arriving');
          pageCards(page).removeClass('is-hidden');
          $dots.empty().toggle(pages > 1);

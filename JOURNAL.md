@@ -25,6 +25,7 @@ title: "Your Title"
 tags: [news]           # news, ai, projects, books, finance or notes (or several: [books, finance])
 description: "One sentence for the post list and link previews."
 highlight: true        # optional: pin to the front of the welcome cards
+updated: 2026-12-01    # optional: when you revise a post, shows "Updated Dec 1, 2026"
 
 # News posts that point to another page (optional; shows a link card):
 link: https://example.com/the-article
@@ -56,7 +57,14 @@ Drafts can go in a `_drafts/` folder (drafts are never published).
 ## Adding a new topic
 
 Add a line under `journal_tags:` in `_config.yml`, for example `research: Research`,
-then use `tags: [research]` in a post. A filter button appears on the Journal page.
+then use `tags: [research]` in a post. A filter button appears on the Journal page
+once at least one post uses the topic (empty topics stay hidden).
+
+## What each post gets automatically
+
+- **More in (topic)**: up to three other posts from the post's first tag, so put the main topic first.
+- **Share** buttons (LinkedIn, Copy link).
+- Article details for Google (title, dates, author), using `updated:` when set.
 
 ## Previewing on your Mac (optional)
 

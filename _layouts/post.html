@@ -10,6 +10,7 @@ layout: journal
 	<div class="w-post-head">
 		<p class="w-meta">
 			<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+			{% if page.updated %}<span class="w-updated">Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: '%b %-d, %Y' }}</time></span>{% endif %}
 			{% for t in page.tags %}<a class="w-tag" href="/journal/#{{ t }}">{{ site.journal_tags[t] | default: t }}</a>{% endfor %}
 			<span class="w-dot" aria-hidden="true">&middot;</span>
 			<span>{{ minutes }} min read</span>
@@ -63,21 +64,53 @@ layout: journal
 	</a>
 	{% endif %}
 
-	{% if page.previous or page.next %}
-	<nav class="w-post-nav" aria-label="More from the journal">
-		{% if page.previous %}
-		<a class="w-nav-card" href="{{ page.previous.url }}">
-			<span class="w-nav-label">&larr; Older</span>
-			<span class="w-nav-title">{{ page.previous.title }}</span>
-		</a>
-		{% else %}<span></span>{% endif %}
-		{% if page.next %}
-		<a class="w-nav-card is-next" href="{{ page.next.url }}">
-			<span class="w-nav-label">Newer &rarr;</span>
-			<span class="w-nav-title">{{ page.next.title }}</span>
-		</a>
-		{% endif %}
-	</nav>
+	{% assign share_url = page.url | absolute_url %}
+	<div class="w-share">
+		<span class="w-share-label">Share</span>
+		<a class="w-share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | url_encode }}" target="_blank" rel="noopener"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+		<button type="button" class="w-share-btn" data-copy="{{ share_url }}"><i class="fa fa-link" aria-hidden="true"></i> <span>Copy link</span></button>
+	</div>
+
+	{% comment %} up to three other posts in this post's main topic {% endcomment %}
+	{% assign topic = page.tags | first %}
+	{% assign shown = 0 %}
+	{% capture related %}{% for post in site.posts %}{% if shown < 3 and post.url != page.url and post.tags contains topic %}{% assign shown = shown | plus: 1 %}
+		<a class="w-related-card" href="{{ post.url }}">
+			<span class="w-nav-label">{{ post.date | date: '%b %Y' }}</span>
+			<span class="w-nav-title">{{ post.title }}</span>
+		</a>{% endif %}{% endfor %}{% endcapture %}
+	{% if shown > 0 %}
+	<section class="w-related" aria-label="More in {{ site.journal_tags[topic] | default: topic }}">
+		<h2 class="w-related-head">More in {{ site.journal_tags[topic] | default: topic }} <a href="/journal/#{{ topic }}">See all &rarr;</a></h2>
+		<div class="w-related-grid">{{ related }}
+		</div>
+	</section>
 	{% endif %}
 
 </article>
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"headline": {{ page.title | jsonify }},
+	"description": {{ page.description | default: page.excerpt | strip_html | normalize_whitespace | truncate: 200 | jsonify }},
+	"datePublished": "{{ page.date | date_to_xmlschema }}",
+	"dateModified": "{{ page.updated | default: page.date | date_to_xmlschema }}",
+	"url": "{{ page.url | absolute_url }}",
+	"image": "{{ page.cover | default: page.image | default: '/images/journal-share-card.jpg' | absolute_url }}",
+	"keywords": {% capture kw %}{% for t in page.tags %}{{ site.journal_tags[t] | default: t }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}{{ kw | jsonify }},
+	"author": { "@type": "Person", "name": "{{ site.author }}", "url": "{{ '/' | absolute_url }}" }
+}
+</script>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+	b.addEventListener('click', function () {
+		var label = b.querySelector('span');
+		var done = function () { label.textContent = 'Copied'; setTimeout(function () { label.textContent = 'Copy link'; }, 1800); };
+		if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copy).then(done, function () { window.prompt('Copy this link:', b.dataset.copy); });
+		else window.prompt('Copy this link:', b.dataset.copy);
+	});
+});
+</script>

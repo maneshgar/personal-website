@@ -1,0 +1,43 @@
+---
+layout: journal
+title: Subscribe
+permalink: /journal/subscribe/
+description: Follow new posts from Behnam Maneshgar's journal in your feed reader.
+---
+{% assign feed = '/journal/feed.xml' | absolute_url %}
+<section class="w-sub">
+
+	<a class="w-crumb" href="/journal/">&larr; Journal</a>
+
+	<div class="w-list-head">
+		<h1>Subscribe</h1>
+		<p class="w-intro">Get new posts as they come out, in the reader app you already use. No account here, no emails, and you can unfollow any time.</p>
+	</div>
+
+	<p class="w-sub-step">Follow with one click</p>
+	<div class="w-sub-apps">
+		<a class="w-share-btn" href="https://feedly.com/i/subscription/feed/{{ feed | url_encode }}" target="_blank" rel="noopener">Feedly</a>
+		<a class="w-share-btn" href="https://www.inoreader.com/?add_feed={{ feed | url_encode }}" target="_blank" rel="noopener">Inoreader</a>
+		<a class="w-share-btn" href="feed:{{ feed }}">Reader app on this device</a>
+	</div>
+
+	<p class="w-sub-step">Or paste this address into any reader</p>
+	<div class="w-sub-copy">
+		<input type="text" readonly value="{{ feed }}" aria-label="Feed address" onclick="this.select()">
+		<button type="button" class="w-share-btn" data-copy="{{ feed }}"><i class="fa fa-link" aria-hidden="true"></i> <span>Copy</span></button>
+	</div>
+
+	<p class="w-sub-note">New to feed readers? They collect new posts from the sites you follow in one place. Free options include <a href="https://feedly.com" target="_blank" rel="noopener">Feedly</a> (web and phone) and <a href="https://netnewswire.com" target="_blank" rel="noopener">NetNewsWire</a> (Mac and iPhone). You can also follow me on <a href="https://ca.linkedin.com/in/bmaneshgar" target="_blank" rel="noopener">LinkedIn</a>.</p>
+
+</section>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+	b.addEventListener('click', function () {
+		var label = b.querySelector('span');
+		var done = function () { label.textContent = 'Copied'; setTimeout(function () { label.textContent = 'Copy'; }, 1800); };
+		if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copy).then(done, function () { window.prompt('Copy this address:', b.dataset.copy); });
+		else window.prompt('Copy this address:', b.dataset.copy);
+	});
+});
+</script>

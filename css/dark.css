@@ -114,10 +114,28 @@ html.theme-dark .w-project-paper { color: var(--muted) !important; }
 html.theme-dark .w-card a,
 html.theme-dark .w-book,
 html.theme-dark .w-linkcard,
-html.theme-dark .w-nav-card { background: var(--surface) !important; border-color: var(--border) !important; }
+html.theme-dark .w-nav-card,
+html.theme-dark .w-related-card,
+html.theme-dark .w-search input[type="search"],
+html.theme-dark .w-sub-copy input[type="text"] { background: var(--surface) !important; border-color: var(--border) !important; }
 html.theme-dark .w-post-head,
-html.theme-dark .w-post-nav { border-color: var(--border) !important; }
-html.theme-dark .w-filter { background: var(--surface-2); color: var(--text); }
+html.theme-dark .w-post-nav,
+html.theme-dark .w-related { border-color: var(--border) !important; }
+html.theme-dark .w-filter,
+html.theme-dark .w-share-btn { background: var(--surface-2); color: var(--text); }
+html.theme-dark .w-share-btn:hover { background: var(--accent); color: #0D1114; }
+html.theme-dark .w-search input[type="search"],
+html.theme-dark .w-sub-copy input[type="text"] { color: var(--heading); }
+html.theme-dark .w-sub-note { color: var(--text); }
+html.theme-dark .w-sub-step { color: var(--muted); }
+html.theme-dark .w-sub-note a, html.theme-dark .w-sub-note a:visited { color: var(--accent); border-bottom-color: rgba(44, 196, 201, .35); }
+html.theme-dark .w-search input[type="search"]:focus { border-color: var(--accent) !important; }
+html.theme-dark .w-related-head { color: var(--heading); }
+html.theme-dark .w-subscribe, html.theme-dark .w-related-head a { color: var(--accent); }
+html.theme-dark .w-search .fa,
+html.theme-dark .w-search input::placeholder,
+html.theme-dark .w-updated,
+html.theme-dark .w-share-label { color: var(--muted); }
 html.theme-dark .w-filter.is-active { background: var(--accent); color: #0D1114; }
 html.theme-dark .w-body a, html.theme-dark .w-body a:visited,
 html.theme-dark .w-post-nav a, html.theme-dark .w-crumb:hover { color: var(--accent); }
@@ -191,6 +209,9 @@ header#home .hero-day {
       linear-gradient(to bottom, rgba(16, 26, 30, .38) 0%, rgba(16, 26, 30, .28) 45%, rgba(16, 26, 30, .30) 100%),
       url(../images/header-day.jpg) center top / cover no-repeat,
       #475352;
+   background-image:
+      linear-gradient(to bottom, rgba(16, 26, 30, .38) 0%, rgba(16, 26, 30, .28) 45%, rgba(16, 26, 30, .30) 100%),
+      image-set(url(../images/header-day.webp) type("image/webp"), url(../images/header-day.jpg) type("image/jpeg"));
    opacity: 1;
    transition: opacity .6s ease;
 }

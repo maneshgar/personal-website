@@ -32,6 +32,7 @@ html:not(.theme-dark) .education,
 html:not(.theme-dark) .work,
 html:not(.theme-dark) .w-post-head,
 html:not(.theme-dark) .w-post-nav,
+html:not(.theme-dark) .w-related,
 html:not(.theme-dark) .w-body hr { border-color: #D5DEE0 !important; }
 html:not(.theme-dark) #resume .award-list li { border-bottom-color: #CFD9DB !important; }
 html:not(.theme-dark) #about .bio-text.bio-columns { column-rule-color: #D0D9DB; }
@@ -46,7 +47,10 @@ html:not(.theme-dark) #resume .pub-list li,
 html:not(.theme-dark) .w-card a,
 html:not(.theme-dark) .w-book,
 html:not(.theme-dark) .w-linkcard,
-html:not(.theme-dark) .w-nav-card {
+html:not(.theme-dark) .w-nav-card,
+html:not(.theme-dark) .w-related-card,
+html:not(.theme-dark) .w-search input[type="search"],
+html:not(.theme-dark) .w-sub-copy input[type="text"] {
    background: #F6F9F9 !important;
    border-color: #D5DEE0 !important;
 }
@@ -61,9 +65,21 @@ html:not(.theme-dark) body #contact textarea:focus { background: #fff !important
 html:not(.theme-dark) .contact-qr img { border-color: #D5DEE0; }
 
 /* pills and chips: visible against the page */
-html:not(.theme-dark) .w-filter { background: #DCE5E7; color: #2F3539; }
-html:not(.theme-dark) .w-filter:hover { background: #CFE7E8; color: #0B7F83; }
-html:not(.theme-dark) .w-filter.is-active { background: #11ABB0; color: #fff; }
+html:not(.theme-dark) .w-filter,
+html:not(.theme-dark) .w-share-btn { background: #DCE5E7; color: #2F3539; }
+html:not(.theme-dark) .w-share-btn:hover { background: #11ABB0; color: #fff; }
+html:not(.theme-dark) .w-search input[type="search"]:focus { background: #fff !important; border-color: #11ABB0 !important; }
+html:not(.theme-dark) .w-search .fa,
+html:not(.theme-dark) .w-search input::placeholder,
+html:not(.theme-dark) .w-updated,
+html:not(.theme-dark) .w-share-label { color: #5F6A71; }
+html:not(.theme-dark) .w-filter:hover { background: #CFE7E8; color: #0A7378; }
+html:not(.theme-dark) .w-filter.is-active { background: #0B8287; color: #fff; }
+
+/* buttons and links that need a little more contrast on the light page */
+html:not(.theme-dark) #contact button.submit { background: #0B8287; }
+html:not(.theme-dark) #contact button.submit:hover { background: #0A7378; }
+html:not(.theme-dark) #contact p.lead a { border-bottom: 1px solid rgba(10, 115, 120, .35); }
 html:not(.theme-dark) .w-tag,
 html:not(.theme-dark) a.w-tag,
 html:not(.theme-dark) #resume .cv-date,
@@ -75,6 +91,7 @@ html:not(.theme-dark) .w-tag.w-highlight { background: #F5E7C4; color: #8A5E00; 
 html:not(.theme-dark) #about p,
 html:not(.theme-dark) .w-body,
 html:not(.theme-dark) .w-intro,
+html:not(.theme-dark) .w-sub-note,
 html:not(.theme-dark) .w-excerpt,
 html:not(.theme-dark) #resume .desc,
 html:not(.theme-dark) #contact p.lead { color: #343B40; }
@@ -108,9 +125,9 @@ html:not(.theme-dark) .w-topbar {
 }
 html:not(.theme-dark) .w-nav a.current,
 html:not(.theme-dark) .w-nav a:hover,
-html:not(.theme-dark) .w-brand:hover { color: #7FE3E6; }
+html:not(.theme-dark) .w-brand:hover { color: #C2F6F7; }
 html:not(.theme-dark) .w-nav li.nav-page a { border-color: #7FE3E6; }
 @media only screen and (min-width: 768px) {
    html:not(.theme-dark) #nav-wrap.opaque ul#nav li.current a,
-   html:not(.theme-dark) #nav-wrap.opaque ul#nav li a:hover { color: #7FE3E6; }
+   html:not(.theme-dark) #nav-wrap.opaque ul#nav li a:hover { color: #C2F6F7; }
 }

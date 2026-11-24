@@ -31,6 +31,7 @@ header {
    min-height: 500px;
    width: 100%;
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
+   background-image: image-set(url(../images/header-background.webp) type("image/webp"), url(../images/header-background.jpg) type("image/jpeg"));
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
@@ -247,7 +248,7 @@ ul#nav li.current a { color: #F06000; }
 }
 #resume .info {
    font: 14px/22px 'librebaskerville-italic', serif;
-   color: #6E7881;
+   color: #5F6A71;
    margin: 0 0 2px;
 }
 #resume .desc {
@@ -262,7 +263,7 @@ ul#nav li.current a { color: #F06000; }
    flex-shrink: 0;
    font: 11px/20px 'opensans-semibold', 'opensans-bold', sans-serif;
    letter-spacing: .5px;
-   color: #0B7F83;
+   color: #0A7378;
    background: #E7F6F6;
    border-radius: 10px;
    padding: 0 10px;
@@ -293,7 +294,7 @@ ul#nav li.current a { color: #F06000; }
    border-radius: 50%;
    background: #B9C4C6;
 }
-#resume .cv-list li span { color: #9AA3A8; margin-left: 6px; font-size: 13px; }
+#resume .cv-list li span { color: #5F6A71; margin-left: 6px; font-size: 13px; }
 
 /* publications */
 #resume .pub-list li:before {
@@ -321,7 +322,7 @@ ul#nav li.current a { color: #F06000; }
 #resume .pub-venue {
    display: inline !important;
    font: 13px/20px 'librebaskerville-italic', serif;
-   color: #6E7881;
+   color: #5F6A71;
    margin-right: 8px;
 }
 #resume .pub-list .cv-date { display: inline-block; }
@@ -334,7 +335,7 @@ ul#nav li.current a { color: #F06000; }
    padding: 6px 16px;
    font: 13px/20px 'opensans-semibold', 'opensans-bold', sans-serif;
    letter-spacing: .5px;
-   color: #0B7F83;
+   color: #0A7378;
    background: #E7F6F6;
    border: 0;
    border-radius: 16px;
@@ -722,7 +723,7 @@ body {
    line-height: 28px;
    color: #3F464C;
 }
-#about a, #about a:visited { color: #0B7F83; border-bottom-color: rgba(11, 127, 131, .3); }
+#about a, #about a:visited { color: #0A7378; border-bottom-color: rgba(10, 115, 120, .3); }
 #about a:hover, #about a:focus { color: #11ABB0; border-bottom-color: #11ABB0; }
 #about .address {
    color: #5A6066;
@@ -753,7 +754,7 @@ body {
    color: #5A6066;
    font-family: 'opensans-regular', sans-serif;
 }
-#contact a, #contact a:visited { color: #0B7F83; }
+#contact a, #contact a:visited { color: #0A7378; }
 #contact a:hover, #contact a:focus { color: #11ABB0; }
 #contact label {
    font: 14px/22px 'opensans-bold', sans-serif;
@@ -781,7 +782,7 @@ body {
 }
 #message-success {
    background: #E7F6F6;
-   color: #0B7F83;
+   color: #0A7378;
 }
 
 /* Footer */
@@ -796,7 +797,7 @@ footer {
    color: #8A949A;
    border-top: 1px solid #E6ECEC;
 }
-footer a, footer a:visited { color: #6E7881; }
+footer a, footer a:visited { color: #5F6A71; }
 footer a:hover, footer a:focus { color: #11ABB0; }
 
 
@@ -836,7 +837,12 @@ header .social li a {
 /* The banner is one screen tall plus --hero-fade. That extra strip sits
    below the fold and fades the photo into the Bio background, so the
    first screen is only the photo and the fade appears as you scroll. */
-header#home { --hero-fade: 260px; }
+header#home {
+   --hero-fade: 260px;
+   /* the same height init.js sets, from the first paint, so nothing jumps */
+   min-height: calc(100vh + var(--hero-fade));
+   min-height: calc(100svh + var(--hero-fade));
+}
 header:after {
    content: "";
    position: absolute;
@@ -1076,7 +1082,7 @@ body #contact .row { max-width: 720px; }
    font: 13px/20px 'opensans-bold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1.5px;
-   color: #9AA3A8;
+   color: #5F6A71;
    margin: 0 0 2px;
    margin-bottom: 4px;
 }
@@ -1099,7 +1105,7 @@ h1.section-title { margin-bottom: 48px; }
    font: 13px/20px 'opensans-bold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1.5px;
-   color: #9AA3A8;
+   color: #5F6A71;
    margin: 0 0 6px;
 }
 #about .bio-text {
@@ -1273,7 +1279,7 @@ header .banner-text h3 { text-wrap: balance; }
    font: 12px/18px 'opensans-bold', sans-serif;
    letter-spacing: 3px;
    text-transform: uppercase;
-   color: #0B7F83;
+   color: #0A7378;
    margin: 0 0 18px;
 }
 #about h2.bio-kicker:before { content: ""; width: 32px; height: 2px; background: #11ABB0; }
